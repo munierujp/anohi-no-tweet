@@ -9,6 +9,6 @@
   "devDependencies": {
     "@munierujp/eslint-config": "8.0.0",
     "eslint": "8.36.0",
-    "npm-run-all2": "6.0.4"
+    "npm-run-all2": "6.0.5"
   }
 }
