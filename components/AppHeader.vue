@@ -1,6 +1,9 @@
 <template>
-  <v-app-bar>
-    <v-app-bar-title text="#あの日のツイートを表示するやつ" />
+  <v-app-bar
+    color="transparent"
+    flat
+  >
+    <v-spacer />
     <AppTwitterButton />
     <AppGitHubButton />
   </v-app-bar>
