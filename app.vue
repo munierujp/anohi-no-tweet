@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import dayjs from 'dayjs'
+
 const user = ref('')
 const date = ref('')
 
@@ -8,9 +10,10 @@ const search = () => {
   ]
 
   if (date.value) {
+    const dateString = dayjs(date.value).format('YYYY-MM-DD')
     queries.push(
-      ['since', `${date.value}_00:00:00_JST`],
-      ['until', `${date.value}_23:59:59_JST`]
+      ['since', `${dateString}_00:00:00_JST`],
+      ['until', `${dateString}_23:59:59_JST`]
     )
   }
 
@@ -27,8 +30,7 @@ const search = () => {
 
 const openTwilog = () => {
   if (date.value) {
-    const [year, month, dayOfMonth] = date.value.split('-')
-    const dateString = `${year.slice(2)}${month}${dayOfMonth}` // yyMMdd
+    const dateString = dayjs(date.value).format('YYMMDD')
     const url = `https://twilog.org/${user.value}/date-${dateString}`
     window.open(url, '_blank')
   } else {
@@ -39,10 +41,7 @@ const openTwilog = () => {
 
 const openTwisave = () => {
   if (date.value) {
-    const [year, month, dayOfMonth] = date.value.split('-')
-    const monthString = month[0] === '0' ? month.slice(1) : month
-    const dayOfMonthString = dayOfMonth[0] === '0' ? dayOfMonth.slice(1) : dayOfMonth
-    const dateString = `${year}/${monthString}/${dayOfMonthString}` // yyyy/M/d
+    const dateString = dayjs(date.value).format('YYYY/M/D')
     const url = `https://twisave.com/${user.value}/${dateString}`
     window.open(url, '_blank')
   } else {
