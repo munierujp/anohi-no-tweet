@@ -4,16 +4,22 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "lint": "eslint .",
+    "lint": "npm-run-all -p lint:*",
+    "lint:html": "markuplint \"**/*.{html,vue}\"",
+    "lint:js": "eslint .",
     "generate": "nuxt generate",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@markuplint/vue-parser": "3.6.1",
+    "@markuplint/vue-spec": "3.6.1",
     "@munierujp/eslint-config-typescript": "18.0.0",
     "@nuxt/eslint-config": "0.1.1",
     "@nuxtjs/eslint-module": "4.0.2",
     "eslint": "8.37.0",
+    "markuplint": "3.6.1",
+    "npm-run-all2": "6.0.5",
     "nuxt": "3.3.3"
   }
 }
