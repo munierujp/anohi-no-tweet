@@ -11,6 +11,9 @@
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview"
   },
+  "dependencies": {
+    "dayjs": "1.11.7"
+  },
   "devDependencies": {
     "@markuplint/vue-parser": "3.6.1",
     "@markuplint/vue-spec": "3.6.1",
