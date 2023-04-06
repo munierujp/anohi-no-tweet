@@ -1,5 +1,73 @@
+const APP_NAME = '#あの日のツイートを表示するやつ'
+const APP_DESCRIPTION = '指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: APP_NAME,
+      meta: [
+        {
+          name: 'description',
+          content: APP_DESCRIPTION
+        },
+        {
+          property: 'og:type',
+          content: 'website'
+        },
+        {
+          property: 'og:title',
+          content: APP_NAME
+        },
+        {
+          property: 'og:description',
+          content: APP_DESCRIPTION
+        },
+        {
+          property: 'og:url',
+          content: 'https://anohi-no-tweet.munieru.app/'
+        },
+        {
+          property: 'og:image',
+          content: 'https://anohi-no-tweet.munieru.app/icon.png'
+        },
+        {
+          property: 'og:image:width',
+          content: '1024'
+        },
+        {
+          property: 'og:image:height',
+          content: '1024'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          name: 'twitter:site',
+          content: '@munieru_jp'
+        }
+      ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico'
+        },
+        {
+          rel: 'icon',
+          type: 'image/png',
+          href: '/android-chrome-192x192.png',
+          sizes: '192x192'
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/apple-touch-icon.png',
+          sizes: '180x180'
+        }
+      ]
+    }
+  },
   build: {
     transpile: [
       'vuetify'
@@ -10,5 +78,13 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxtjs/eslint-module'
-  ]
+  ],
+  typescript: {
+    strict: true
+  },
+  vite: {
+    define: {
+      'process.env.DEBUG': false
+    }
+  }
 })
