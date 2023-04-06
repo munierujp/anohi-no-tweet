@@ -1,14 +1,31 @@
 {
   "name": "anohi-no-tweet",
-  "version": "0.1.0",
-  "description": "指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。",
+  "private": true,
   "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
     "lint": "npm-run-all -p lint:*",
-    "lint:js": "eslint ."
+    "lint:html": "markuplint \"**/*.{html,vue}\"",
+    "lint:js": "eslint .",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "dayjs": "1.11.7"
   },
   "devDependencies": {
-    "@munierujp/eslint-config": "8.0.0",
-    "eslint": "8.36.0",
-    "npm-run-all2": "6.0.5"
+    "@markuplint/vue-parser": "3.6.1",
+    "@markuplint/vue-spec": "3.6.1",
+    "@mdi/font": "7.2.96",
+    "@munierujp/eslint-config-typescript": "18.0.0",
+    "@nuxt/eslint-config": "0.1.1",
+    "@nuxtjs/eslint-module": "4.0.2",
+    "eslint": "8.37.0",
+    "markuplint": "3.6.1",
+    "npm-run-all2": "6.0.5",
+    "nuxt": "3.3.3",
+    "sass": "1.60.0",
+    "vuetify": "3.1.13"
   }
 }
