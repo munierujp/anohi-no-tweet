@@ -4,11 +4,16 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
+    "lint": "eslint .",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@munierujp/eslint-config-typescript": "^18.0.0",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/eslint-module": "^4.0.2",
+    "eslint": "^8.37.0",
     "nuxt": "^3.3.3"
   }
 }
