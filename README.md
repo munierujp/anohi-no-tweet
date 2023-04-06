@@ -1,42 +1,5 @@
-# Nuxt 3 Minimal Starter
+[![lint](https://github.com/munierujp/anohi-no-tweet/actions/workflows/lint.yml/badge.svg)](https://github.com/munierujp/anohi-no-tweet/actions/workflows/lint.yml)
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+# #あの日のツイートを表示するやつ
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。
