@@ -62,7 +62,9 @@ const openTwisave = () => {
           </v-col>
         </v-row>
         <v-row class="text-center">
-          <v-col>指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。</v-col>
+          <v-col>
+            <span>指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
+          </v-col>
         </v-row>
         <v-row justify="center">
           <v-col
