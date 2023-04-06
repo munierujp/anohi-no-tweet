@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "anohi-no-tweet",
   "private": true,
   "scripts": {
     "build": "nuxt build",
