@@ -61,9 +61,7 @@ const openTwisave = () => {
             <h1>#あの日のツイートを表示するやつ</h1>
           </v-col>
         </v-row>
-        <v-row
-          class="text-center"
-        >
+        <v-row class="text-center">
           <v-col>指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。</v-col>
         </v-row>
         <v-row justify="center">
@@ -97,9 +95,7 @@ const openTwisave = () => {
             />
           </v-col>
         </v-row>
-        <v-row
-          class="text-center"
-        >
+        <v-row class="text-center">
           <v-col>
             <v-btn
               :disabled="!user"
@@ -109,9 +105,7 @@ const openTwisave = () => {
             </v-btn>
           </v-col>
         </v-row>
-        <v-row
-          class="text-center"
-        >
+        <v-row class="text-center">
           <v-col>
             <v-btn
               :disabled="!user"
@@ -121,9 +115,7 @@ const openTwisave = () => {
             </v-btn>
           </v-col>
         </v-row>
-        <v-row
-          class="text-center"
-        >
+        <v-row class="text-center">
           <v-col>
             <v-btn
               :disabled="!user"
