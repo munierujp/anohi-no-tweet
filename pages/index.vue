@@ -99,7 +99,6 @@ const openTwisave = () => {
             v-model="user"
             type="text"
             label="ユーザー名"
-            placeholder="munieru_jp"
             hide-details
           />
         </v-col>
