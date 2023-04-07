@@ -100,6 +100,7 @@ const openTwisave = () => {
             type="text"
             label="ユーザー名"
             placeholder="munieru_jp"
+            hide-details
           />
         </v-col>
       </v-row>
@@ -115,6 +116,7 @@ const openTwisave = () => {
             v-model="date"
             type="date"
             label="日付"
+            hide-details
           />
         </v-col>
       </v-row>
