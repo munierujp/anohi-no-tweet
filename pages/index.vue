@@ -2,7 +2,10 @@
 import dayjs from 'dayjs'
 
 const route = useRoute()
+console.debug(`typeof route.query.user=${typeof route.query.user}`)
+console.debug(`route.query.user=${route.query.user}`)
 const user = ref(typeof route.query.user === 'string' ? route.query.user : '')
+console.debug(`user.value=${user.value}`)
 const date = ref(typeof route.query.date === 'string' && dayjs(route.query.date).isValid() ? route.query.date : '')
 const includesRetweets = ref(route.query.includesRetweets !== 'false')
 
@@ -81,6 +84,7 @@ const openTwisave = () => {
       <v-row class="text-center">
         <v-col>
           <span>指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
+          <span>user: {{ user }}</span>
         </v-col>
       </v-row>
       <v-row justify="center">
