@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
 
-const user = ref('')
-const date = ref('')
-const includesRetweets = ref(true)
+const route = useRoute()
+const user = ref(typeof route.query.user === 'string' ? route.query.user : '')
+const date = ref(typeof route.query.date === 'string' && dayjs(route.query.date).isValid() ? route.query.date : '')
+const includesRetweets = ref(route.query.includesRetweets !== 'false')
 
 const search = () => {
   const queries: [string, string][] = [
@@ -11,11 +12,15 @@ const search = () => {
   ]
 
   if (date.value) {
-    const dateString = dayjs(date.value).format('YYYY-MM-DD')
-    queries.push(
-      ['since', `${dateString}_00:00:00_JST`],
-      ['until', `${dateString}_23:59:59_JST`]
-    )
+    const day = dayjs(date.value)
+
+    if (day.isValid()) {
+      const dateString = day.format('YYYY-MM-DD')
+      queries.push(
+        ['since', `${dateString}_00:00:00_JST`],
+        ['until', `${dateString}_23:59:59_JST`]
+      )
+    }
   }
 
   if (includesRetweets.value) {
@@ -35,24 +40,33 @@ const search = () => {
 
 const openTwilog = () => {
   if (date.value) {
-    const dateString = dayjs(date.value).format('YYMMDD')
-    const url = `https://twilog.org/${user.value}/date-${dateString}`
-    window.open(url, '_blank')
-  } else {
-    const url = `https://twilog.org/${user.value}/`
-    window.open(url, '_blank')
+    const day = dayjs(date.value)
+
+    if (day.isValid()) {
+      const dateString = day.format('YYMMDD')
+      const url = `https://twilog.org/${user.value}/date-${dateString}`
+      window.open(url, '_blank')
+      return
+    }
   }
+
+  const url = `https://twilog.org/${user.value}/`
+  window.open(url, '_blank')
 }
 
 const openTwisave = () => {
   if (date.value) {
-    const dateString = dayjs(date.value).format('YYYY/M/D')
-    const url = `https://twisave.com/${user.value}/${dateString}`
-    window.open(url, '_blank')
-  } else {
-    const url = `https://twisave.com/${user.value}/`
-    window.open(url, '_blank')
+    const day = dayjs(date.value)
+
+    if (day.isValid()) {
+      const dateString = day.format('YYYY/M/D')
+      const url = `https://twisave.com/${user.value}/${dateString}`
+      window.open(url, '_blank')
+      return
+    }
   }
+  const url = `https://twisave.com/${user.value}/`
+  window.open(url, '_blank')
 }
 </script>
 
