@@ -2,16 +2,16 @@
 import dayjs from 'dayjs'
 
 const route = useRoute()
-console.debug(`typeof route.query.user=${typeof route.query.user}`)
-console.debug(`route.query.user=${route.query.user}`)
-const user = ref(typeof route.query.user === 'string' ? route.query.user : '')
-console.debug(`user.value=${user.value}`)
+console.debug(`typeof route.query.username=${typeof route.query.username}`)
+console.debug(`route.query.username=${route.query.username}`)
+const username = ref(typeof route.query.username === 'string' ? route.query.username : '')
+console.debug(`username.value=${username.value}`)
 const date = ref(typeof route.query.date === 'string' && dayjs(route.query.date).isValid() ? route.query.date : '')
 const includesRetweets = ref(route.query.includesRetweets !== 'false')
 
 const search = () => {
   const queries: [string, string][] = [
-    ['from', user.value]
+    ['from', username.value]
   ]
 
   if (date.value) {
@@ -47,13 +47,13 @@ const openTwilog = () => {
 
     if (day.isValid()) {
       const dateString = day.format('YYMMDD')
-      const url = `https://twilog.org/${user.value}/date-${dateString}`
+      const url = `https://twilog.org/${username.value}/date-${dateString}`
       window.open(url, '_blank')
       return
     }
   }
 
-  const url = `https://twilog.org/${user.value}/`
+  const url = `https://twilog.org/${username.value}/`
   window.open(url, '_blank')
 }
 
@@ -63,12 +63,12 @@ const openTwisave = () => {
 
     if (day.isValid()) {
       const dateString = day.format('YYYY/M/D')
-      const url = `https://twisave.com/${user.value}/${dateString}`
+      const url = `https://twisave.com/${username.value}/${dateString}`
       window.open(url, '_blank')
       return
     }
   }
-  const url = `https://twisave.com/${user.value}/`
+  const url = `https://twisave.com/${username.value}/`
   window.open(url, '_blank')
 }
 </script>
@@ -84,7 +84,7 @@ const openTwisave = () => {
       <v-row class="text-center">
         <v-col>
           <span>指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
-          <span>user: {{ user }}</span>
+          <span>username: {{ username }}</span>
         </v-col>
       </v-row>
       <v-row justify="center">
@@ -96,7 +96,7 @@ const openTwisave = () => {
           xl="2"
         >
           <v-text-field
-            v-model="user"
+            v-model="username"
             type="text"
             label="ユーザー名"
             hide-details
@@ -138,7 +138,7 @@ const openTwisave = () => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!user"
+            :disabled="!username"
             @click="search"
           >
             検索
@@ -149,7 +149,7 @@ const openTwisave = () => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!user"
+            :disabled="!username"
             @click="openTwilog"
           >
             Twilog
@@ -160,7 +160,7 @@ const openTwisave = () => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!user"
+            :disabled="!username"
             @click="openTwisave"
           >
             ツイセーブ
