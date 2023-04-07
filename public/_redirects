@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://anohi-no-tweet.netlify.com/* https://anohi-no-tweet.munieru.app/:splat 301!
