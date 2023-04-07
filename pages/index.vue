@@ -110,7 +110,7 @@ const openTwisave = () => {
         >
           <v-checkbox
             v-model="includesRetweets"
-            label="リツイートを含める"
+            label="リツイートを含む"
             hide-details
           />
         </v-col>
