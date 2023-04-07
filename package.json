@@ -21,6 +21,7 @@
     "@munierujp/eslint-config-typescript": "18.0.0",
     "@nuxt/eslint-config": "0.1.1",
     "@nuxtjs/eslint-module": "4.0.2",
+    "@vite-pwa/nuxt": "0.0.7",
     "eslint": "8.37.0",
     "markuplint": "3.6.1",
     "npm-run-all2": "6.0.5",
