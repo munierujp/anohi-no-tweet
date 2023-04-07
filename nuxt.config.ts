@@ -1,4 +1,5 @@
 const APP_NAME = '#あの日のツイートを表示するやつ'
+const APP_NAME_SHORT = 'あの日のツイート'
 const APP_DESCRIPTION = '指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -77,7 +78,8 @@ export default defineNuxtConfig({
     'vuetify/lib/styles/main.sass'
   ],
   modules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@vite-pwa/nuxt'
   ],
   typescript: {
     strict: true
@@ -85,6 +87,28 @@ export default defineNuxtConfig({
   vite: {
     define: {
       'process.env.DEBUG': false
+    }
+  },
+  pwa: {
+    manifest: {
+      name: APP_NAME,
+      short_name: APP_NAME_SHORT,
+      description: APP_DESCRIPTION,
+      theme_color: '#1DA1F2',
+      background_color: '#15202B',
+      icons: [
+        {
+          src: 'pwa-192x192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ],
+      display: 'standalone'
     }
   }
 })
