@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 const route = useRoute()
 const user = ref(typeof route.query.user === 'string' ? route.query.user : '')
 const date = ref(typeof route.query.date === 'string' && dayjs(route.query.date).isValid() ? route.query.date : '')
-const includesRetweets = ref(true)
+const includesRetweets = ref(route.query.includesRetweets !== 'false')
 
 const search = () => {
   const queries: [string, string][] = [
