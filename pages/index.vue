@@ -118,6 +118,7 @@ const openTwisave = () => {
       <v-row class="text-center">
         <v-col>
           <v-btn
+            class="app-button"
             :disabled="!user"
             @click="search"
           >
@@ -128,6 +129,7 @@ const openTwisave = () => {
       <v-row class="text-center">
         <v-col>
           <v-btn
+            class="app-button"
             :disabled="!user"
             @click="openTwilog"
           >
@@ -138,6 +140,7 @@ const openTwisave = () => {
       <v-row class="text-center">
         <v-col>
           <v-btn
+            class="app-button"
             :disabled="!user"
             @click="openTwisave"
           >
@@ -148,3 +151,9 @@ const openTwisave = () => {
     </v-container>
   </v-main>
 </template>
+
+<style lang="scss" scoped>
+.app-button {
+  text-transform: none;
+}
+</style>
