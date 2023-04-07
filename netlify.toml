@@ -1,0 +1,20 @@
+# https://vite-pwa-org.netlify.app/deployment/netlify.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# https://vite-pwa-org.netlify.app/deployment/netlify.html
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+# https://vite-pwa-org.netlify.app/deployment/netlify.html
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    cache-control = '''
+    max-age=31536000,
+    immutable
+    '''
