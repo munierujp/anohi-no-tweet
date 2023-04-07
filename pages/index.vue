@@ -3,6 +3,7 @@ import dayjs from 'dayjs'
 
 const user = ref('')
 const date = ref('')
+const includesRetweets = ref(true)
 
 const search = () => {
   const queries: [string, string][] = [
@@ -15,6 +16,10 @@ const search = () => {
       ['since', `${dateString}_00:00:00_JST`],
       ['until', `${dateString}_23:59:59_JST`]
     )
+  }
+
+  if (includesRetweets.value) {
+    queries.push(['include', 'nativeretweets'])
   }
 
   const query = queries
@@ -92,6 +97,21 @@ const openTwisave = () => {
             v-model="date"
             type="date"
             label="日付"
+          />
+        </v-col>
+      </v-row>
+      <v-row justify="center">
+        <v-col
+          cols="12"
+          sm="6"
+          md="4"
+          lg="4"
+          xl="2"
+        >
+          <v-checkbox
+            v-model="includesRetweets"
+            label="リツイートを含める"
+            hide-details
           />
         </v-col>
       </v-row>
