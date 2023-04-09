@@ -23,7 +23,7 @@
     "@nuxtjs/eslint-module": "4.0.2",
     "@vite-pwa/nuxt": "0.0.7",
     "eslint": "8.37.0",
-    "markuplint": "3.6.1",
+    "markuplint": "3.7.0",
     "npm-run-all2": "6.0.5",
     "nuxt": "3.3.3",
     "sass": "1.61.0",
