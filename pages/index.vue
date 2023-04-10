@@ -91,6 +91,7 @@ const twisaveURL = computed(() => {
             type="text"
             label="ユーザー名"
             placeholder="munieru_jp"
+            clearable
           />
         </v-col>
       </v-row>
@@ -106,6 +107,7 @@ const twisaveURL = computed(() => {
             v-model="date"
             type="date"
             label="日付"
+            clearable
           />
         </v-col>
       </v-row>
