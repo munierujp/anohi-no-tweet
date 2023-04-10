@@ -11,8 +11,7 @@ import {
 const darkBlueTheme: ThemeDefinition = {
   dark: true,
   colors: {
-    background: '#15202B',
-    surface: 'F7F9F9'
+    background: '#15202B'
   }
 }
 
