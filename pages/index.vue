@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import dayjs from 'dayjs'
 
-const route = useRoute()
-const user = ref(typeof route.query.user === 'string' ? route.query.user : '')
-const date = ref(typeof route.query.date === 'string' && dayjs(route.query.date).isValid() ? route.query.date : '')
-const includesRetweets = ref(route.query.includesRetweets !== 'false')
+const { query } = useRoute()
+const user = ref(typeof query.user === 'string' ? query.user : '')
+const date = ref(typeof query.date === 'string' && dayjs(query.date).isValid() ? query.date : '')
+const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterURL = computed(() => {
   const queries: [string, string][] = [
     ['from', user.value]
