@@ -5,8 +5,7 @@ const route = useRoute()
 const user = ref(typeof route.query.user === 'string' ? route.query.user : '')
 const date = ref(typeof route.query.date === 'string' && dayjs(route.query.date).isValid() ? route.query.date : '')
 const includesRetweets = ref(route.query.includesRetweets !== 'false')
-
-const search = () => {
+const twitterURL = computed(() => {
   const queries: [string, string][] = [
     ['from', user.value]
   ]
@@ -34,40 +33,36 @@ const search = () => {
     f: 'live',
     q: query
   })
-  const url = `https://twitter.com/search?${params.toString()}`
-  window.open(url, '_blank')
-}
-
-const openTwilog = () => {
-  if (date.value) {
-    const day = dayjs(date.value)
-
-    if (day.isValid()) {
-      const dateString = day.format('YYMMDD')
-      const url = `https://twilog.org/${user.value}/date-${dateString}`
-      window.open(url, '_blank')
-      return
-    }
+  return `https://twitter.com/search?${params}`
+})
+const twilogURL = computed(() => {
+  if (!date.value) {
+    return `https://twilog.org/${user.value}/`
   }
 
-  const url = `https://twilog.org/${user.value}/`
-  window.open(url, '_blank')
-}
+  const day = dayjs(date.value)
 
-const openTwisave = () => {
-  if (date.value) {
-    const day = dayjs(date.value)
-
-    if (day.isValid()) {
-      const dateString = day.format('YYYY/M/D')
-      const url = `https://twisave.com/${user.value}/${dateString}`
-      window.open(url, '_blank')
-      return
-    }
+  if (!day.isValid()) {
+    return `https://twilog.org/${user.value}/`
   }
-  const url = `https://twisave.com/${user.value}/`
-  window.open(url, '_blank')
-}
+
+  const dateString = day.format('YYMMDD')
+  return `https://twilog.org/${user.value}/date-${dateString}`
+})
+const twisaveURL = computed(() => {
+  if (!date.value) {
+    return `https://twisave.com/${user.value}/`
+  }
+
+  const day = dayjs(date.value)
+
+  if (!day.isValid()) {
+    return `https://twisave.com/${user.value}/`
+  }
+
+  const dateString = day.format('YYYY/M/D')
+  return `https://twisave.com/${user.value}/${dateString}`
+})
 </script>
 
 <template>
@@ -134,7 +129,8 @@ const openTwisave = () => {
           <v-btn
             class="app-button"
             :disabled="!user"
-            @click="search"
+            :href="twitterURL"
+            target="_blank"
           >
             検索
           </v-btn>
@@ -145,7 +141,8 @@ const openTwisave = () => {
           <v-btn
             class="app-button"
             :disabled="!user"
-            @click="openTwilog"
+            :href="twilogURL"
+            target="_blank"
           >
             Twilog
           </v-btn>
@@ -156,7 +153,8 @@ const openTwisave = () => {
           <v-btn
             class="app-button"
             :disabled="!user"
-            @click="openTwisave"
+            :href="twisaveURL"
+            target="_blank"
           >
             ツイセーブ
           </v-btn>
