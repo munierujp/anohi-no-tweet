@@ -19,6 +19,26 @@ const config = {
   },
   excludeFiles: [
     './node_modules/**/*'
+  ],
+  nodeRules: [
+    // https://vuetifyjs.com/en/api/v-text-field/
+    {
+      selector: 'v-text-field',
+      rules: {
+        'invalid-attr': {
+          options: {
+            allowAttrs: [
+              {
+                name: 'autofocus',
+                value: {
+                  type: 'Boolean'
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
   ]
 }
 
