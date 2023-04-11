@@ -92,6 +92,7 @@ const twisaveURL = computed(() => {
             label="ユーザー名"
             placeholder="munieru_jp"
             clearable
+            autofocus
           />
         </v-col>
       </v-row>
