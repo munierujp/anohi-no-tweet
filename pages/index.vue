@@ -90,6 +90,7 @@ const twisaveURL = computed(() => {
             v-model="user"
             type="text"
             label="ユーザー名"
+            prefix="@"
             placeholder="munieru_jp"
             hide-details
             clearable
