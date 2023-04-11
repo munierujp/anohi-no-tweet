@@ -19,6 +19,25 @@ const config = {
   },
   excludeFiles: [
     './node_modules/**/*'
+  ],
+  nodeRules: [
+    {
+      selector: 'v-text-field',
+      rules: {
+        'invalid-attr': {
+          options: {
+            allowAttrs: [
+              {
+                name: 'autofocus',
+                value: {
+                  type: 'Boolean'
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
   ]
 }
 
