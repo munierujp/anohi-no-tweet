@@ -86,7 +86,7 @@ const twisaveKeywordURL = computed(() => {
       </v-row>
       <v-row class="text-center">
         <v-col>
-          <span>指定した日付のツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
+          <span>指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
         </v-col>
       </v-row>
       <v-row justify="center">
