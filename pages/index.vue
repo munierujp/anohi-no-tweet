@@ -41,18 +41,10 @@ const twitterURL = computed(() => {
   return `https://twitter.com/search?${params}`
 })
 const twilogDateURL = computed(() => {
-  if (!date.value) {
-    return `https://twilog.org/${user.value}/`
-  }
-
-  const day = dayjs(date.value)
-
-  if (!day.isValid()) {
-    return `https://twilog.org/${user.value}/`
-  }
-
-  const dateString = day.format('YYMMDD')
-  return `https://twilog.org/${user.value}/date-${dateString}`
+  return createTwilogDateURL({
+    user: user.value,
+    date: date.value
+  })
 })
 const twilogKeywordURL = computed(() => {
   return createTwilogKeywordURL({
