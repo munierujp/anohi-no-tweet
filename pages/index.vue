@@ -59,7 +59,10 @@ const twisaveDateURL = computed(() => {
   })
 })
 const twisaveKeywordURL = computed(() => {
-  return `https://twisave.com/${user.value}/search/${keyword.value}`
+  return createTwisaveKeywordURL({
+    user: user.value,
+    keyword: keyword.value
+  })
 })
 </script>
 
