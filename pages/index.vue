@@ -53,18 +53,10 @@ const twilogKeywordURL = computed(() => {
   })
 })
 const twisaveDateURL = computed(() => {
-  if (!date.value) {
-    return `https://twisave.com/${user.value}/`
-  }
-
-  const day = dayjs(date.value)
-
-  if (!day.isValid()) {
-    return `https://twisave.com/${user.value}/`
-  }
-
-  const dateString = day.format('YYYY/M/D')
-  return `https://twisave.com/${user.value}/${dateString}`
+  return createTwisaveDateURL({
+    user: user.value,
+    date: date.value
+  })
 })
 const twisaveKeywordURL = computed(() => {
   return `https://twisave.com/${user.value}/search/${keyword.value}`
