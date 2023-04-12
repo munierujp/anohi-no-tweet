@@ -7,72 +7,36 @@ const date = ref(typeof query.date === 'string' && dayjs(query.date).isValid() ?
 const keyword = ref(typeof query.keyword === 'string' ? query.keyword : '')
 const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterURL = computed(() => {
-  const queries: string[] = []
-
-  if (keyword.value) {
-    queries.push(keyword.value)
-  }
-
-  if (user.value) {
-    queries.push(`from:${user.value}`)
-  }
-
-  if (date.value) {
-    const day = dayjs(date.value)
-
-    if (day.isValid()) {
-      const dateString = day.format('YYYY-MM-DD')
-      queries.push(
-        `since:${dateString}_00:00:00_JST`,
-        `until:${dateString}_23:59:59_JST`
-      )
-    }
-  }
-
-  if (includesRetweets.value) {
-    queries.push('include:nativeretweets')
-  }
-
-  const query = queries.join(' ')
-  const params = new URLSearchParams({
-    f: 'live',
-    q: query
+  return createTwitterURL({
+    user: user.value,
+    date: date.value,
+    keyword: keyword.value,
+    includesRetweets: includesRetweets.value
   })
-  return `https://twitter.com/search?${params}`
 })
 const twilogDateURL = computed(() => {
-  if (!date.value) {
-    return `https://twilog.org/${user.value}/`
-  }
-
-  const day = dayjs(date.value)
-
-  if (!day.isValid()) {
-    return `https://twilog.org/${user.value}/`
-  }
-
-  const dateString = day.format('YYMMDD')
-  return `https://twilog.org/${user.value}/date-${dateString}`
+  return createTwilogDateURL({
+    user: user.value,
+    date: date.value
+  })
 })
 const twilogKeywordURL = computed(() => {
-  return `https://twilog.org/${user.value}/search?word=${keyword.value}`
+  return createTwilogKeywordURL({
+    user: user.value,
+    keyword: keyword.value
+  })
 })
 const twisaveDateURL = computed(() => {
-  if (!date.value) {
-    return `https://twisave.com/${user.value}/`
-  }
-
-  const day = dayjs(date.value)
-
-  if (!day.isValid()) {
-    return `https://twisave.com/${user.value}/`
-  }
-
-  const dateString = day.format('YYYY/M/D')
-  return `https://twisave.com/${user.value}/${dateString}`
+  return createTwisaveDateURL({
+    user: user.value,
+    date: date.value
+  })
 })
 const twisaveKeywordURL = computed(() => {
-  return `https://twisave.com/${user.value}/search/${keyword.value}`
+  return createTwisaveKeywordURL({
+    user: user.value,
+    keyword: keyword.value
+  })
 })
 </script>
 
