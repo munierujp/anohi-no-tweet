@@ -4,3 +4,10 @@
 # #あの日のツイートを表示するやつ
 
 指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開きます。
+
+<div align="center">
+  <img
+    src="./meta/screenshot.png"
+    width="300"
+  >
+</div>
