@@ -55,7 +55,10 @@ const twilogDateURL = computed(() => {
   return `https://twilog.org/${user.value}/date-${dateString}`
 })
 const twilogKeywordURL = computed(() => {
-  return `https://twilog.org/${user.value}/search?word=${keyword.value}`
+  return createTwilogKeywordURL({
+    user: user.value,
+    keyword: keyword.value
+  })
 })
 const twisaveDateURL = computed(() => {
   if (!date.value) {
