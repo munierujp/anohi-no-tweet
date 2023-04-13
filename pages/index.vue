@@ -20,8 +20,8 @@ const twilogDateURL = computed(() => {
     date: date.value
   })
 })
-const twilogKeywordURL = computed(() => {
-  return createTwilogKeywordURL({
+const twilogKeywordSearchURL = computed(() => {
+  return createTwilogKeywordSearchURL({
     user: user.value,
     keyword: keyword.value
   })
@@ -151,7 +151,7 @@ const twisaveKeywordSearchURL = computed(() => {
           <v-btn
             class="app-button"
             :disabled="!user || !keyword"
-            :href="twilogKeywordURL"
+            :href="twilogKeywordSearchURL"
             target="_blank"
           >
             Twilog（キーワード）
