@@ -6,7 +6,7 @@ import {
 import { createTwilogKeywordSearchURL } from './createTwilogKeywordSearchURL'
 
 describe('createTwilogKeywordSearchURL', () => {
-  it('returns URL to search for keywords in Twilog.', () => {
+  it('returns the URL to search for keywords in Twilog.', () => {
     const actual = createTwilogKeywordSearchURL({
       user: 'munieru_jp',
       keyword: 'hello'
