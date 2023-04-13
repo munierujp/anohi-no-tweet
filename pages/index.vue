@@ -32,8 +32,8 @@ const twisaveDateURL = computed(() => {
     date: date.value
   })
 })
-const twisaveKeywordURL = computed(() => {
-  return createTwisaveKeywordURL({
+const twisaveKeywordSearchURL = computed(() => {
+  return createTwisaveKeywordSearchURL({
     user: user.value,
     keyword: keyword.value
   })
@@ -175,7 +175,7 @@ const twisaveKeywordURL = computed(() => {
           <v-btn
             class="app-button"
             :disabled="!user || !keyword"
-            :href="twisaveKeywordURL"
+            :href="twisaveKeywordSearchURL"
             target="_blank"
           >
             ツイセーブ（キーワード）

@@ -3,11 +3,11 @@ import {
   expect,
   it
 } from 'vitest'
-import { createTwisaveKeywordURL } from './createTwisaveKeywordURL'
+import { createTwisaveKeywordSearchURL } from './createTwisaveKeywordSearchURL'
 
 describe('createTwisaveKeywordURL', () => {
   it('returns URL to search for keywords in Twisave.', () => {
-    const actual = createTwisaveKeywordURL({
+    const actual = createTwisaveKeywordSearchURL({
       user: 'munieru_jp',
       keyword: 'hello'
     })
