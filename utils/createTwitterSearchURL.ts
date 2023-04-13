@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 
-export const createTwitterURL = ({
+export const createTwitterSearchURL = ({
   user,
   date,
   keyword,

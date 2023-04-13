@@ -6,8 +6,8 @@ const user = ref(typeof query.user === 'string' ? query.user : '')
 const date = ref(typeof query.date === 'string' && dayjs(query.date).isValid() ? query.date : '')
 const keyword = ref(typeof query.keyword === 'string' ? query.keyword : '')
 const includesRetweets = ref(query.includesRetweets !== 'false')
-const twitterURL = computed(() => {
-  return createTwitterURL({
+const twitterSearchURL = computed(() => {
+  return createTwitterSearchURL({
     user: user.value,
     date: date.value,
     keyword: keyword.value,
@@ -127,7 +127,7 @@ const twisaveKeywordSearchURL = computed(() => {
           <v-btn
             class="app-button"
             :disabled="!user && !keyword"
-            :href="twitterURL"
+            :href="twitterSearchURL"
             target="_blank"
           >
             検索
