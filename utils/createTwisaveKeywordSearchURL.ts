@@ -1,4 +1,4 @@
-export const createTwisaveKeywordURL = ({
+export const createTwisaveKeywordSearchURL = ({
   user,
   keyword
 }: {

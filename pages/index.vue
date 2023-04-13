@@ -6,8 +6,8 @@ const user = ref(typeof query.user === 'string' ? query.user : '')
 const date = ref(typeof query.date === 'string' && dayjs(query.date).isValid() ? query.date : '')
 const keyword = ref(typeof query.keyword === 'string' ? query.keyword : '')
 const includesRetweets = ref(query.includesRetweets !== 'false')
-const twitterURL = computed(() => {
-  return createTwitterURL({
+const twitterSearchURL = computed(() => {
+  return createTwitterSearchURL({
     user: user.value,
     date: date.value,
     keyword: keyword.value,
@@ -20,8 +20,8 @@ const twilogDateURL = computed(() => {
     date: date.value
   })
 })
-const twilogKeywordURL = computed(() => {
-  return createTwilogKeywordURL({
+const twilogKeywordSearchURL = computed(() => {
+  return createTwilogKeywordSearchURL({
     user: user.value,
     keyword: keyword.value
   })
@@ -32,8 +32,8 @@ const twisaveDateURL = computed(() => {
     date: date.value
   })
 })
-const twisaveKeywordURL = computed(() => {
-  return createTwisaveKeywordURL({
+const twisaveKeywordSearchURL = computed(() => {
+  return createTwisaveKeywordSearchURL({
     user: user.value,
     keyword: keyword.value
   })
@@ -127,7 +127,7 @@ const twisaveKeywordURL = computed(() => {
           <v-btn
             class="app-button"
             :disabled="!user && !keyword"
-            :href="twitterURL"
+            :href="twitterSearchURL"
             target="_blank"
           >
             検索
@@ -151,7 +151,7 @@ const twisaveKeywordURL = computed(() => {
           <v-btn
             class="app-button"
             :disabled="!user || !keyword"
-            :href="twilogKeywordURL"
+            :href="twilogKeywordSearchURL"
             target="_blank"
           >
             Twilog（キーワード）
@@ -175,7 +175,7 @@ const twisaveKeywordURL = computed(() => {
           <v-btn
             class="app-button"
             :disabled="!user || !keyword"
-            :href="twisaveKeywordURL"
+            :href="twisaveKeywordSearchURL"
             target="_blank"
           >
             ツイセーブ（キーワード）

@@ -1,4 +1,4 @@
-export const createTwilogKeywordURL = ({
+export const createTwilogKeywordSearchURL = ({
   user,
   keyword
 }: {
