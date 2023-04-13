@@ -6,7 +6,7 @@ import {
 import { createTwilogDateURL } from './createTwilogDateURL'
 
 describe('createTwilogDateURL', () => {
-  it('returns the URL of Twisave for the given date.', () => {
+  it('returns the URL of Twilog for the given date.', () => {
     const actual = createTwilogDateURL({
       user: 'munieru_jp',
       date: '2023-04-13'
