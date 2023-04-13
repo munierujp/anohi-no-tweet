@@ -5,7 +5,7 @@ import {
 } from 'vitest'
 import { createTwisaveKeywordSearchURL } from './createTwisaveKeywordSearchURL'
 
-describe('createTwisaveKeywordURL', () => {
+describe('createTwisaveKeywordSearchURL', () => {
   it('returns URL to search for keywords in Twisave.', () => {
     const actual = createTwisaveKeywordSearchURL({
       user: 'munieru_jp',
