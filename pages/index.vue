@@ -66,6 +66,7 @@ const twisaveKeywordSearchURL = computed(() => {
             hide-details
             clearable
             autofocus
+            single-line
           />
         </v-col>
       </v-row>
