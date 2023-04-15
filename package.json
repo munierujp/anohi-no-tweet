@@ -24,7 +24,6 @@
     "@nuxtjs/eslint-module": "4.0.2",
     "@pinia-plugin-persistedstate/nuxt": "1.1.1",
     "@pinia/nuxt": "0.4.8",
-    "@quasar/extras": "1.16.2",
     "@vite-pwa/nuxt": "0.0.7",
     "date-fns": "2.29.3",
     "eslint": "8.38.0",
