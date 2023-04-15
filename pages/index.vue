@@ -1,13 +1,3 @@
-<script lang="ts" setup>
-const formStore = useFormStore()
-const twisaveKeywordSearchURL = computed(() => {
-  return createTwisaveKeywordSearchURL({
-    user: formStore.user,
-    keyword: formStore.keyword
-  })
-})
-</script>
-
 <template>
   <v-main id="main">
     <v-container>
@@ -87,22 +77,9 @@ const twisaveKeywordSearchURL = computed(() => {
       </v-row>
       <v-row class="text-center">
         <v-col>
-          <v-btn
-            class="app-button"
-            :disabled="!formStore.user || !formStore.keyword"
-            :href="twisaveKeywordSearchURL"
-            target="_blank"
-          >
-            ツイセーブ（キーワード）
-          </v-btn>
+          <AppTwisaveKeywordButton />
         </v-col>
       </v-row>
     </v-container>
   </v-main>
 </template>
-
-<style lang="scss" scoped>
-.app-button {
-  text-transform: none;
-}
-</style>
