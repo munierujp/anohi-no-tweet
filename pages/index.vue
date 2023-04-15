@@ -15,10 +15,6 @@ const twitterSearchURL = computed(() => {
   })
 })
 const twilogDateURL = computed(() => {
-  if (!date.value) {
-    return `https://twilog.org/${user.value}/`
-  }
-
   return createTwilogDateURL({
     user: user.value,
     date: parseISO(date.value)
