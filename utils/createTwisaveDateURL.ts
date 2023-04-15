@@ -10,6 +10,10 @@ export const createTwisaveDateURL = ({
   user: string
   date: Date
 }): string => {
+  if (user === '') {
+    return 'https://twisave.com/'
+  }
+
   if (!isValid(date)) {
     return `https://twisave.com/${user}/`
   }
