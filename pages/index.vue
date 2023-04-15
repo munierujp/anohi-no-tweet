@@ -19,40 +19,7 @@
           lg="4"
           xl="2"
         >
-          <AppUserForm />
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col
-          cols="12"
-          sm="6"
-          md="4"
-          lg="4"
-          xl="2"
-        >
-          <AppDateForm />
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col
-          cols="12"
-          sm="6"
-          md="4"
-          lg="4"
-          xl="2"
-        >
-          <AppKeywordForm />
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col
-          cols="12"
-          sm="6"
-          md="4"
-          lg="4"
-          xl="2"
-        >
-          <AppIncludesRetweetsCheckbox />
+          <AppForm />
         </v-col>
       </v-row>
       <v-row class="text-center">
