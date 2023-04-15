@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import dayjs from 'dayjs'
+import { parseISO } from 'date-fns'
 
 const { query } = useRoute()
 const user = ref(typeof query.user === 'string' ? query.user : '')
-const date = ref(typeof query.date === 'string' && dayjs(query.date).isValid() ? query.date : '')
+const date = ref(typeof query.date === 'string' ? query.date : '')
 const keyword = ref(typeof query.keyword === 'string' ? query.keyword : '')
 const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterSearchURL = computed(() => {
@@ -15,9 +15,13 @@ const twitterSearchURL = computed(() => {
   })
 })
 const twilogDateURL = computed(() => {
+  if (!date.value) {
+    return `https://twilog.org/${user}/`
+  }
+
   return createTwilogDateURL({
     user: user.value,
-    date: date.value
+    date: parseISO(date.value)
   })
 })
 const twilogKeywordSearchURL = computed(() => {
