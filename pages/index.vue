@@ -77,13 +77,7 @@ const twisaveKeywordSearchURL = computed(() => {
           lg="4"
           xl="2"
         >
-          <v-text-field
-            v-model="formStore.date"
-            type="date"
-            label="日付"
-            hide-details
-            clearable
-          />
+          <AppDateForm />
         </v-col>
       </v-row>
       <v-row justify="center">
