@@ -81,8 +81,7 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
-    'nuxt-quasar-ui'
+    '@pinia-plugin-persistedstate/nuxt'
   ],
   typescript: {
     strict: true
