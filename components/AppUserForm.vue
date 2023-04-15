@@ -6,7 +6,7 @@ const formStore = useFormStore()
   <v-text-field
     v-model="formStore.user"
     type="text"
-    label="ユーザー名"
+    label="ユーザー"
     prefix="@"
     placeholder="munieru_jp"
     hide-details
