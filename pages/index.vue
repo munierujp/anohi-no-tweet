@@ -1,13 +1,5 @@
 <script lang="ts" setup>
-import { parseISO } from 'date-fns'
-
 const formStore = useFormStore()
-const twisaveDateURL = computed(() => {
-  return createTwisaveDateURL({
-    user: formStore.user,
-    date: parseISO(formStore.date)
-  })
-})
 const twisaveKeywordSearchURL = computed(() => {
   return createTwisaveKeywordSearchURL({
     user: formStore.user,
@@ -90,14 +82,7 @@ const twisaveKeywordSearchURL = computed(() => {
       </v-row>
       <v-row class="text-center">
         <v-col>
-          <v-btn
-            class="app-button"
-            :disabled="!formStore.user || !formStore.date"
-            :href="twisaveDateURL"
-            target="_blank"
-          >
-            ツイセーブ（日付）
-          </v-btn>
+          <AppTwisaveDateButton />
         </v-col>
       </v-row>
       <v-row class="text-center">
