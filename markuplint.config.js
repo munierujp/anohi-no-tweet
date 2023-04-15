@@ -38,6 +38,24 @@ const config = {
           }
         }
       }
+    },
+    // https://element-plus.org/en-US/component/input.html
+    {
+      selector: 'el-input',
+      rules: {
+        'invalid-attr': {
+          options: {
+            allowAttrs: [
+              {
+                name: 'autofocus',
+                value: {
+                  type: 'Boolean'
+                }
+              }
+            ]
+          }
+        }
+      }
     }
   ]
 }
