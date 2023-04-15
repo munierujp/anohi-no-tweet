@@ -3,13 +3,12 @@ import { parseISO } from 'date-fns'
 
 const { query } = useRoute()
 const store = useStore()
-const keyword = ref(typeof query.keyword === 'string' ? query.keyword : '')
 const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterSearchURL = computed(() => {
   return createTwitterSearchURL({
     user: store.user,
     date: parseISO(store.date),
-    keyword: keyword.value,
+    keyword: store.keyword,
     includesRetweets: includesRetweets.value
   })
 })
@@ -22,7 +21,7 @@ const twilogDateURL = computed(() => {
 const twilogKeywordSearchURL = computed(() => {
   return createTwilogKeywordSearchURL({
     user: store.user,
-    keyword: keyword.value
+    keyword: store.keyword
   })
 })
 const twisaveDateURL = computed(() => {
@@ -34,7 +33,7 @@ const twisaveDateURL = computed(() => {
 const twisaveKeywordSearchURL = computed(() => {
   return createTwisaveKeywordSearchURL({
     user: store.user,
-    keyword: keyword.value
+    keyword: store.keyword
   })
 })
 </script>
@@ -98,7 +97,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-text-field
-            v-model="keyword"
+            v-model="store.keyword"
             type="text"
             label="キーワード"
             hide-details
@@ -125,7 +124,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user && !keyword"
+            :disabled="!store.user && !store.keyword"
             :href="twitterSearchURL"
             target="_blank"
           >
@@ -149,7 +148,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !keyword"
+            :disabled="!store.user || !store.keyword"
             :href="twilogKeywordSearchURL"
             target="_blank"
           >
@@ -173,7 +172,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !keyword"
+            :disabled="!store.user || !store.keyword"
             :href="twisaveKeywordSearchURL"
             target="_blank"
           >
