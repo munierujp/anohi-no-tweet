@@ -22,31 +22,6 @@
           <AppForm />
         </v-col>
       </v-row>
-      <v-row class="text-center">
-        <v-col>
-          <AppSearchButton />
-        </v-col>
-      </v-row>
-      <v-row class="text-center">
-        <v-col>
-          <AppTwilogDateButton />
-        </v-col>
-      </v-row>
-      <v-row class="text-center">
-        <v-col>
-          <AppTwilogKeywordButton />
-        </v-col>
-      </v-row>
-      <v-row class="text-center">
-        <v-col>
-          <AppTwisaveDateButton />
-        </v-col>
-      </v-row>
-      <v-row class="text-center">
-        <v-col>
-          <AppTwisaveKeywordButton />
-        </v-col>
-      </v-row>
     </v-container>
   </v-main>
 </template>
