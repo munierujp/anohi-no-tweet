@@ -6,12 +6,37 @@ import {
 import { createTwisaveKeywordSearchURL } from './createTwisaveKeywordSearchURL'
 
 describe('createTwisaveKeywordSearchURL', () => {
-  it('returns the URL to search for keywords in Twisave.', () => {
-    const actual = createTwisaveKeywordSearchURL({
-      user: 'munieru_jp',
-      keyword: 'hello'
+  describe('returns the URL of the Twisave', () => {
+    it.each<{
+      user: string
+      keyword: string
+      expected: string
+    }>([
+      {
+        user: '',
+        keyword: '',
+        expected: 'https://twisave.com/'
+      },
+      {
+        user: 'munieru_jp',
+        keyword: '',
+        expected: 'https://twisave.com/munieru_jp/'
+      },
+      {
+        user: 'munieru_jp',
+        keyword: 'hello',
+        expected: 'https://twisave.com/munieru_jp/search/hello'
+      }
+    ])('user=$user, keyword=$keyword', ({
+      user,
+      keyword,
+      expected
+    }) => {
+      const actual = createTwisaveKeywordSearchURL({
+        user,
+        keyword
+      })
+      expect(actual).toBe(expected)
     })
-
-    expect(actual).toBe('https://twisave.com/munieru_jp/search/hello')
   })
 })
