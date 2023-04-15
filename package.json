@@ -15,6 +15,7 @@
     "test": "nuxt test"
   },
   "dependencies": {
+    "date-fns": "2.29.3",
     "dayjs": "1.11.7"
   },
   "devDependencies": {
