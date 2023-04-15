@@ -22,7 +22,6 @@ const closeDialog = () => {
       <v-card-text>指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開きます。</v-card-text>
       <v-card-actions>
         <v-btn
-          color="primary"
           block
           @click="closeDialog"
         >
