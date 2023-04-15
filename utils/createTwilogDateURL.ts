@@ -1,22 +1,23 @@
-import dayjs from 'dayjs'
+import {
+  format,
+  isValid
+} from 'date-fns'
 
 export const createTwilogDateURL = ({
   user,
   date
 }: {
   user: string
-  date: string
+  date: Date
 }): string => {
-  if (date === '') {
+  if (user === '') {
+    return 'https://twilog.org/'
+  }
+
+  if (!isValid(date)) {
     return `https://twilog.org/${user}/`
   }
 
-  const day = dayjs(date)
-
-  if (!day.isValid()) {
-    return `https://twilog.org/${user}/`
-  }
-
-  const dateString = day.format('YYMMDD')
+  const dateString = format(date, 'yyMMdd')
   return `https://twilog.org/${user}/date-${dateString}`
 }
