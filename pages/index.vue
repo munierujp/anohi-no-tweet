@@ -1,15 +1,13 @@
 <script lang="ts" setup>
 import { parseISO } from 'date-fns'
 
-const { query } = useRoute()
 const store = useStore()
-const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterSearchURL = computed(() => {
   return createTwitterSearchURL({
     user: store.user,
     date: parseISO(store.date),
     keyword: store.keyword,
-    includesRetweets: includesRetweets.value
+    includesRetweets: store.includesRetweets
   })
 })
 const twilogDateURL = computed(() => {
@@ -114,7 +112,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-checkbox
-            v-model="includesRetweets"
+            v-model="store.includesRetweets"
             label="リツイートを含む"
             hide-details
           />
