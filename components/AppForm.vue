@@ -1,38 +1,6 @@
 <script lang="ts" setup>
-import {
-  parseISO,
-  subDays,
-  subMonths,
-  subWeeks,
-  subYears
-} from 'date-fns'
+import { parseISO } from 'date-fns'
 
-const now = new Date()
-const dateShortcuts: {
-  text: string,
-  value: Date
-}[] = [
-  {
-    text: '今日',
-    value: now
-  },
-  {
-    text: '昨日',
-    value: subDays(now, 1)
-  },
-  {
-    text: '1週間前',
-    value: subWeeks(now, 1)
-  },
-  {
-    text: '1ヶ月前',
-    value: subMonths(now, 1)
-  },
-  {
-    text: '1年前',
-    value: subYears(now, 1)
-  }
-]
 const formStore = useFormStore()
 const onClickSearchButton = () => {
   const url = createTwitterSearchURL({
@@ -88,7 +56,6 @@ const onClickTwisaveSearchButton = () => {
         v-model="formStore.date"
         type="date"
         value-format="YYYY-MM-DD"
-        :shortcuts="dateShortcuts"
         clearable
       />
     </el-form-item>
