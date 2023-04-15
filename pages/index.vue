@@ -2,12 +2,6 @@
 import { parseISO } from 'date-fns'
 
 const formStore = useFormStore()
-const twilogKeywordSearchURL = computed(() => {
-  return createTwilogKeywordSearchURL({
-    user: formStore.user,
-    keyword: formStore.keyword
-  })
-})
 const twisaveDateURL = computed(() => {
   return createTwisaveDateURL({
     user: formStore.user,
@@ -91,14 +85,7 @@ const twisaveKeywordSearchURL = computed(() => {
       </v-row>
       <v-row class="text-center">
         <v-col>
-          <v-btn
-            class="app-button"
-            :disabled="!formStore.user || !formStore.keyword"
-            :href="twilogKeywordSearchURL"
-            target="_blank"
-          >
-            Twilog（キーワード）
-          </v-btn>
+          <AppTwilogKeywordButton />
         </v-col>
       </v-row>
       <v-row class="text-center">
