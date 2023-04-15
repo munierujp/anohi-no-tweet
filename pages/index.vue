@@ -2,14 +2,6 @@
 import { parseISO } from 'date-fns'
 
 const formStore = useFormStore()
-const twitterSearchURL = computed(() => {
-  return createTwitterSearchURL({
-    user: formStore.user,
-    date: parseISO(formStore.date),
-    keyword: formStore.keyword,
-    includesRetweets: formStore.includesRetweets
-  })
-})
 const twilogDateURL = computed(() => {
   return createTwilogDateURL({
     user: formStore.user,
@@ -95,14 +87,7 @@ const twisaveKeywordSearchURL = computed(() => {
       </v-row>
       <v-row class="text-center">
         <v-col>
-          <v-btn
-            class="app-button"
-            :disabled="!formStore.user && !formStore.keyword"
-            :href="twitterSearchURL"
-            target="_blank"
-          >
-            検索
-          </v-btn>
+          <AppSearchButton />
         </v-col>
       </v-row>
       <v-row class="text-center">
