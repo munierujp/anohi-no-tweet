@@ -16,7 +16,7 @@ const twitterSearchURL = computed(() => {
 })
 const twilogDateURL = computed(() => {
   if (!date.value) {
-    return `https://twilog.org/${user}/`
+    return `https://twilog.org/${user.value}/`
   }
 
   return createTwilogDateURL({
@@ -31,9 +31,13 @@ const twilogKeywordSearchURL = computed(() => {
   })
 })
 const twisaveDateURL = computed(() => {
+  if (!date.value) {
+    return `https://twisave.com/${user.value}/`
+  }
+
   return createTwisaveDateURL({
     user: user.value,
-    date: date.value
+    date: parseISO(date.value)
   })
 })
 const twisaveKeywordSearchURL = computed(() => {

@@ -1,22 +1,12 @@
-import dayjs from 'dayjs'
+import { format } from 'date-fns'
 
 export const createTwisaveDateURL = ({
   user,
   date
 }: {
   user: string
-  date: string
+  date: Date
 }): string => {
-  if (date === '') {
-    return `https://twisave.com/${user}/`
-  }
-
-  const day = dayjs(date)
-
-  if (!day.isValid()) {
-    return `https://twisave.com/${user}/`
-  }
-
-  const dateString = day.format('YYYY/M/D')
+  const dateString = format(date, 'yyyy/M/d')
   return `https://twisave.com/${user}/${dateString}`
 }
