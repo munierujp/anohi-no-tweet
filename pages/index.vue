@@ -6,7 +6,7 @@
           <h1>
             <img
               id="app-logo"
-              src="logo.png"
+              src="/logo.png"
               alt="#あの日のツイートを表示するやつ"
               width="499"
               height="32"
