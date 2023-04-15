@@ -5,6 +5,7 @@
     flat
   >
     <v-spacer />
+    <AppHelpButton />
     <AppTwitterButton />
     <AppGitHubButton />
   </v-app-bar>
