@@ -3,13 +3,12 @@ import { parseISO } from 'date-fns'
 
 const { query } = useRoute()
 const store = useStore()
-const date = ref(typeof query.date === 'string' ? query.date : '')
 const keyword = ref(typeof query.keyword === 'string' ? query.keyword : '')
 const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterSearchURL = computed(() => {
   return createTwitterSearchURL({
     user: store.user,
-    date: parseISO(date.value),
+    date: parseISO(store.date),
     keyword: keyword.value,
     includesRetweets: includesRetweets.value
   })
@@ -17,7 +16,7 @@ const twitterSearchURL = computed(() => {
 const twilogDateURL = computed(() => {
   return createTwilogDateURL({
     user: store.user,
-    date: parseISO(date.value)
+    date: parseISO(store.date)
   })
 })
 const twilogKeywordSearchURL = computed(() => {
@@ -29,7 +28,7 @@ const twilogKeywordSearchURL = computed(() => {
 const twisaveDateURL = computed(() => {
   return createTwisaveDateURL({
     user: store.user,
-    date: parseISO(date.value)
+    date: parseISO(store.date)
   })
 })
 const twisaveKeywordSearchURL = computed(() => {
@@ -82,7 +81,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-text-field
-            v-model="date"
+            v-model="store.date"
             type="date"
             label="日付"
             hide-details
@@ -138,7 +137,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !date"
+            :disabled="!store.user || !store.date"
             :href="twilogDateURL"
             target="_blank"
           >
@@ -162,7 +161,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !date"
+            :disabled="!store.user || !store.date"
             :href="twisaveDateURL"
             target="_blank"
           >
