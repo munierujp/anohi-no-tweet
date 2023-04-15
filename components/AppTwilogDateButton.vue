@@ -13,7 +13,6 @@ const twilogDateURL = computed(() => {
 <template>
   <v-btn
     class="app-button"
-    :disabled="!formStore.user || !formStore.date"
     :href="twilogDateURL"
     target="_blank"
   >

@@ -13,7 +13,6 @@ const twisaveDateURL = computed(() => {
 <template>
   <v-btn
     class="app-button"
-    :disabled="!formStore.user || !formStore.date"
     :href="twisaveDateURL"
     target="_blank"
   >

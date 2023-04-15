@@ -11,7 +11,6 @@ const twilogKeywordSearchURL = computed(() => {
 <template>
   <v-btn
     class="app-button"
-    :disabled="!formStore.user || !formStore.keyword"
     :href="twilogKeywordSearchURL"
     target="_blank"
   >

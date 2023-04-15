@@ -15,7 +15,6 @@ const twitterSearchURL = computed(() => {
 <template>
   <v-btn
     class="app-button"
-    :disabled="!formStore.user && !formStore.keyword"
     :href="twitterSearchURL"
     target="_blank"
   >
