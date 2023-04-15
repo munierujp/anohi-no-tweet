@@ -27,10 +27,6 @@ const twilogKeywordSearchURL = computed(() => {
   })
 })
 const twisaveDateURL = computed(() => {
-  if (!date.value) {
-    return `https://twisave.com/${user.value}/`
-  }
-
   return createTwisaveDateURL({
     user: user.value,
     date: parseISO(date.value)
