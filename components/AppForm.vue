@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import {
-  formatISO,
   parseISO,
   subDays,
   subYears
@@ -9,13 +8,13 @@ import {
 const formStore = useFormStore()
 const now = new Date()
 const onClickTodayButton = () => {
-  formStore.date = formatISO(now, { representation: 'date' })
+  formStore.date = formatISODate(now)
 }
 const onClickYesterdayButton = () => {
-  formStore.date = formatISO(subDays(now, 1), { representation: 'date' })
+  formStore.date = formatISODate(subDays(now, 1))
 }
 const onClickOneYearAgoButton = () => {
-  formStore.date = formatISO(subYears(now, 1), { representation: 'date' })
+  formStore.date = formatISODate(subYears(now, 1))
 }
 const onClickSearchButton = () => {
   const url = createTwitterSearchURL({
