@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const show = ref(false)
+const showDialog = ref(false)
 const openDialog = () => {
-  show.value = true
+  showDialog.value = true
 }
 const closeDialog = () => {
-  show.value = false
+  showDialog.value = false
 }
 </script>
 
@@ -15,7 +15,7 @@ const closeDialog = () => {
     @click="openDialog"
   />
   <v-dialog
-    v-model="show"
+    v-model="showDialog"
     width="auto"
   >
     <v-card>
