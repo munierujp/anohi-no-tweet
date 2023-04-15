@@ -10,6 +10,10 @@ export const createTwilogDateURL = ({
   user: string
   date: Date
 }): string => {
+  if (user === '') {
+    return 'https://twilog.org/'
+  }
+
   if (!isValid(date)) {
     return `https://twilog.org/${user}/`
   }
