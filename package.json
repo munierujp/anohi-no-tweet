@@ -15,6 +15,7 @@
     "test": "nuxt test"
   },
   "dependencies": {
+    "@pinia/nuxt": "0.4.8",
     "date-fns": "2.29.3",
     "pinia": "2.0.34"
   },
