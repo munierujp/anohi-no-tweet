@@ -30,7 +30,6 @@
     "markuplint": "3.7.0",
     "npm-run-all2": "6.0.5",
     "nuxt": "3.3.3",
-    "pinia-plugin-persistedstate": "3.1.0",
     "pinia": "2.0.34",
     "sass": "1.62.0",
     "vitest": "0.30.1",
