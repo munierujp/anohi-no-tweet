@@ -57,16 +57,7 @@ const twisaveKeywordSearchURL = computed(() => {
           lg="4"
           xl="2"
         >
-          <v-text-field
-            v-model="formStore.user"
-            type="text"
-            label="ユーザー名"
-            prefix="@"
-            placeholder="munieru_jp"
-            hide-details
-            clearable
-            autofocus
-          />
+          <AppUserForm />
         </v-col>
       </v-row>
       <v-row justify="center">
