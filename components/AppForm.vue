@@ -1,7 +1,22 @@
 <script lang="ts" setup>
-import { parseISO } from 'date-fns'
+import {
+  formatISO,
+  parseISO,
+  subDays,
+  subYears
+} from 'date-fns'
 
 const formStore = useFormStore()
+const now = new Date()
+const onClickTodayButton = () => {
+  formStore.date = formatISO(now, { representation: 'date' })
+}
+const onClickYesterdayButton = () => {
+  formStore.date = formatISO(subDays(now, 1), { representation: 'date' })
+}
+const onClickOneYearAgoButton = () => {
+  formStore.date = formatISO(subYears(now, 1), { representation: 'date' })
+}
 const onClickSearchButton = () => {
   const url = createTwitterSearchURL({
     user: formStore.user,
@@ -58,6 +73,26 @@ const onClickTwisaveSearchButton = () => {
         value-format="YYYY-MM-DD"
         clearable
       />
+    </el-form-item>
+    <el-form-item>
+      <el-button
+        size="small"
+        @click="onClickTodayButton"
+      >
+        今日
+      </el-button>
+      <el-button
+        size="small"
+        @click="onClickYesterdayButton"
+      >
+        昨日
+      </el-button>
+      <el-button
+        size="small"
+        @click="onClickOneYearAgoButton"
+      >
+        1年前
+      </el-button>
     </el-form-item>
     <el-form-item label="キーワード">
       <el-input
