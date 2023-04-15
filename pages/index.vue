@@ -3,8 +3,15 @@
     <v-container>
       <v-row class="text-center">
         <v-col>
-          <h1 id="app-name">
-            #あの日のツイートを表示するやつ
+          <h1>
+            <img
+              id="app-logo"
+              src="logo.png"
+              alt="#あの日のツイートを表示するやつ"
+              width="499"
+              height="32"
+              decoding="async"
+            >
           </h1>
         </v-col>
       </v-row>
@@ -24,9 +31,8 @@
 </template>
 
 <style lang="scss" scoped>
-@media (width < 600px) {
-  #app-name {
-    font-size: 22px;
-  }
+#app-logo {
+  max-width: 100%;
+  height: auto;
 }
 </style>
