@@ -66,7 +66,10 @@ export default defineNuxtConfig({
           href: '/apple-touch-icon.png',
           sizes: '180x180'
         }
-      ]
+      ],
+      htmlAttrs: {
+        class: ['dark']
+      }
     }
   },
   build: {
@@ -75,11 +78,15 @@ export default defineNuxtConfig({
     ]
   },
   css: [
-    'vuetify/lib/styles/main.sass'
+    'vuetify/lib/styles/main.sass',
+    'element-plus/theme-chalk/dark/css-vars.css'
   ],
   modules: [
     '@nuxtjs/eslint-module',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
+    '@element-plus/nuxt'
   ],
   typescript: {
     strict: true
