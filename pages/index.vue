@@ -9,7 +9,7 @@ const includesRetweets = ref(query.includesRetweets !== 'false')
 const twitterSearchURL = computed(() => {
   return createTwitterSearchURL({
     user: user.value,
-    date: date.value,
+    date: parseISO(date.value),
     keyword: keyword.value,
     includesRetweets: includesRetweets.value
   })

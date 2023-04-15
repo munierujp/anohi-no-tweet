@@ -1,4 +1,7 @@
-import dayjs from 'dayjs'
+import {
+  format,
+  isValid
+} from 'date-fns'
 
 export const createTwitterSearchURL = ({
   user,
@@ -7,7 +10,7 @@ export const createTwitterSearchURL = ({
   includesRetweets
 }: {
   user: string
-  date: string
+  date: Date
   keyword: string
   includesRetweets: boolean
 }): string => {
@@ -21,16 +24,12 @@ export const createTwitterSearchURL = ({
     queries.push(`from:${user}`)
   }
 
-  if (date !== '') {
-    const day = dayjs(date)
-
-    if (day.isValid()) {
-      const dateString = day.format('YYYY-MM-DD')
-      queries.push(
-        `since:${dateString}_00:00:00_JST`,
-        `until:${dateString}_23:59:59_JST`
-      )
-    }
+  if (isValid(date)) {
+    const dateString = format(date, 'yyyy-MM-dd')
+    queries.push(
+      `since:${dateString}_00:00:00_JST`,
+      `until:${dateString}_23:59:59_JST`
+    )
   }
 
   if (includesRetweets) {
