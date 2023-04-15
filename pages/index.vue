@@ -1,37 +1,37 @@
 <script lang="ts" setup>
 import { parseISO } from 'date-fns'
 
-const store = useStore()
+const formStore = useFormStore()
 const twitterSearchURL = computed(() => {
   return createTwitterSearchURL({
-    user: store.user,
-    date: parseISO(store.date),
-    keyword: store.keyword,
-    includesRetweets: store.includesRetweets
+    user: formStore.user,
+    date: parseISO(formStore.date),
+    keyword: formStore.keyword,
+    includesRetweets: formStore.includesRetweets
   })
 })
 const twilogDateURL = computed(() => {
   return createTwilogDateURL({
-    user: store.user,
-    date: parseISO(store.date)
+    user: formStore.user,
+    date: parseISO(formStore.date)
   })
 })
 const twilogKeywordSearchURL = computed(() => {
   return createTwilogKeywordSearchURL({
-    user: store.user,
-    keyword: store.keyword
+    user: formStore.user,
+    keyword: formStore.keyword
   })
 })
 const twisaveDateURL = computed(() => {
   return createTwisaveDateURL({
-    user: store.user,
-    date: parseISO(store.date)
+    user: formStore.user,
+    date: parseISO(formStore.date)
   })
 })
 const twisaveKeywordSearchURL = computed(() => {
   return createTwisaveKeywordSearchURL({
-    user: store.user,
-    keyword: store.keyword
+    user: formStore.user,
+    keyword: formStore.keyword
   })
 })
 </script>
@@ -58,7 +58,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-text-field
-            v-model="store.user"
+            v-model="formStore.user"
             type="text"
             label="ユーザー名"
             prefix="@"
@@ -78,7 +78,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-text-field
-            v-model="store.date"
+            v-model="formStore.date"
             type="date"
             label="日付"
             hide-details
@@ -95,7 +95,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-text-field
-            v-model="store.keyword"
+            v-model="formStore.keyword"
             type="text"
             label="キーワード"
             hide-details
@@ -112,7 +112,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-checkbox
-            v-model="store.includesRetweets"
+            v-model="formStore.includesRetweets"
             label="リツイートを含む"
             hide-details
           />
@@ -122,7 +122,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user && !store.keyword"
+            :disabled="!formStore.user && !formStore.keyword"
             :href="twitterSearchURL"
             target="_blank"
           >
@@ -134,7 +134,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !store.date"
+            :disabled="!formStore.user || !formStore.date"
             :href="twilogDateURL"
             target="_blank"
           >
@@ -146,7 +146,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !store.keyword"
+            :disabled="!formStore.user || !formStore.keyword"
             :href="twilogKeywordSearchURL"
             target="_blank"
           >
@@ -158,7 +158,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !store.date"
+            :disabled="!formStore.user || !formStore.date"
             :href="twisaveDateURL"
             target="_blank"
           >
@@ -170,7 +170,7 @@ const twisaveKeywordSearchURL = computed(() => {
         <v-col>
           <v-btn
             class="app-button"
-            :disabled="!store.user || !store.keyword"
+            :disabled="!formStore.user || !formStore.keyword"
             :href="twisaveKeywordSearchURL"
             target="_blank"
           >

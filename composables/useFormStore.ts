@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useStore = defineStore('store', {
+export const useFormStore = defineStore('form', {
   state: () => ({
     date: '',
     includesRetweets: true,
