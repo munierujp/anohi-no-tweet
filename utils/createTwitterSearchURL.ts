@@ -36,10 +36,13 @@ export const createTwitterSearchURL = ({
     queries.push('include:nativeretweets')
   }
 
-  const query = queries.join(' ')
   const params = new URLSearchParams({
-    f: 'live',
-    q: query
+    f: 'live'
   })
+
+  if (queries.length > 0) {
+    params.set('q', queries.join(' '))
+  }
+
   return `https://twitter.com/search?${params.toString()}`
 }
