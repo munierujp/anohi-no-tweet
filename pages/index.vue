@@ -58,7 +58,7 @@ const twisaveKeywordSearchURL = computed(() => {
           xl="2"
         >
           <v-text-field
-            :model-value="formStore.user"
+            v-model="formStore.user"
             type="text"
             label="ユーザー名"
             prefix="@"
@@ -66,7 +66,6 @@ const twisaveKeywordSearchURL = computed(() => {
             hide-details
             clearable
             autofocus
-            @update:model-value="(user) => formStore.user = user"
           />
         </v-col>
       </v-row>
