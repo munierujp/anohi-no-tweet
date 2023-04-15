@@ -79,7 +79,8 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxtjs/eslint-module',
-    '@vite-pwa/nuxt'
+    '@vite-pwa/nuxt',
+    '@pinia/nuxt'
   ],
   typescript: {
     strict: true
