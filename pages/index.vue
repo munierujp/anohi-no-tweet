@@ -90,11 +90,7 @@ const twisaveKeywordSearchURL = computed(() => {
           lg="4"
           xl="2"
         >
-          <v-checkbox
-            v-model="formStore.includesRetweets"
-            label="リツイートを含む"
-            hide-details
-          />
+          <AppIncludesRetweetsCheckbox />
         </v-col>
       </v-row>
       <v-row class="text-center">
