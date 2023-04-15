@@ -6,12 +6,37 @@ import {
 import { createTwilogKeywordSearchURL } from './createTwilogKeywordSearchURL'
 
 describe('createTwilogKeywordSearchURL', () => {
-  it('returns the URL to search for keywords in Twilog.', () => {
-    const actual = createTwilogKeywordSearchURL({
-      user: 'munieru_jp',
-      keyword: 'hello'
+  describe('returns the URL of the Twilog', () => {
+    it.each<{
+      user: string
+      keyword: string
+      expected: string
+    }>([
+      {
+        user: '',
+        keyword: '',
+        expected: 'https://twilog.org/'
+      },
+      {
+        user: 'munieru_jp',
+        keyword: '',
+        expected: 'https://twilog.org/munieru_jp/'
+      },
+      {
+        user: 'munieru_jp',
+        keyword: 'hello',
+        expected: 'https://twilog.org/munieru_jp/search?word=hello'
+      }
+    ])('user=$user, keyword=$keyword', ({
+      user,
+      keyword,
+      expected
+    }) => {
+      const actual = createTwilogKeywordSearchURL({
+        user,
+        keyword
+      })
+      expect(actual).toBe(expected)
     })
-
-    expect(actual).toBe('https://twilog.org/munieru_jp/search?word=hello')
   })
 })
