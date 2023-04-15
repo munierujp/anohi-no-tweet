@@ -79,13 +79,7 @@ const twisaveKeywordSearchURL = computed(() => {
           lg="4"
           xl="2"
         >
-          <v-text-field
-            v-model="formStore.keyword"
-            type="text"
-            label="キーワード"
-            hide-details
-            clearable
-          />
+          <AppKeywordForm />
         </v-col>
       </v-row>
       <v-row justify="center">
