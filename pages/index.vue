@@ -3,7 +3,9 @@
     <v-container>
       <v-row class="text-center">
         <v-col>
-          <h1>#あの日のツイートを表示するやつ</h1>
+          <h1 id="app-name">
+            #あの日のツイートを表示するやつ
+          </h1>
         </v-col>
       </v-row>
       <v-row justify="center">
@@ -20,3 +22,11 @@
     </v-container>
   </v-main>
 </template>
+
+<style lang="scss" scoped>
+@media (width < 600px) {
+  #app-name {
+    font-size: 22px;
+  }
+}
+</style>
