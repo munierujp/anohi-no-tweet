@@ -9,6 +9,7 @@ defineProps<{
 <template>
   <button
     class="app-icon-button"
+    type="button"
     :title="title"
   >
     <Icon
