@@ -20,8 +20,11 @@ defineProps<{
 </template>
 
 <style lang="scss" scoped>
+$size: 48px;
+$icon-size: 24px;
+
 .app-icon-button {
   border-radius: 50%;
-  padding: 8px;
+  padding: calc(($size - $icon-size) / 2);
 }
 </style>
