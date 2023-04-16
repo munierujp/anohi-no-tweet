@@ -5,15 +5,16 @@ import ja from 'element-plus/es/locale/lang/ja'
 <template>
   <VitePwaManifest />
   <el-config-provider :locale="ja">
-    <v-app id="app">
+    <el-container direction="vertical">
       <AppHeader />
       <NuxtPage />
-    </v-app>
+    </el-container>
   </el-config-provider>
 </template>
 
-<style lang="scss" scoped>
-#app {
+<style lang="scss">
+body {
+  background-color: #15202B;
   color: #F7F9F9;
 }
 </style>
