@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 defineProps<{
   href: string
+  /** @see https://iconify.design/ */
   icon: string
   title?: string
 }>()

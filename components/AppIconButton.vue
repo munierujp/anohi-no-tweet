@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 defineProps<{
+  /** @see https://iconify.design/ */
   icon: string
   title?: string
 }>()
