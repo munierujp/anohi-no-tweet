@@ -5,7 +5,7 @@
         <v-col>
           <h1>
             <img
-              id="app-logo"
+              id="logo"
               src="/logo.png"
               alt="#あの日のツイートを表示するやつ"
               width="499"
@@ -31,7 +31,7 @@
 </template>
 
 <style lang="scss" scoped>
-#app-logo {
+#logo {
   max-width: 100%;
   height: auto;
 }
