@@ -30,9 +30,15 @@ const iconSize = '24px'
 $size: 48px;
 $icon-size: v-bind(iconSize);
 
-.app-icon-link {
-  border-radius: 50%;
+%reset-styles {
   color: unset;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.app-icon-link {
+  @extend %reset-styles;
+  border-radius: 50%;
   padding: calc(($size - $icon-size) / 2);
 }
 </style>
