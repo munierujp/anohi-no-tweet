@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-defineProps<{
+const props = defineProps<{
+  external?: boolean
   href: string
   /** @see https://iconify.design/ */
   icon: string
   title?: string
 }>()
+const target = props.external ? '_blank' : undefined
+const rel = props.external ? 'noreferrer noopener' : undefined
 const iconSize = '24px'
 </script>
 
@@ -13,8 +16,8 @@ const iconSize = '24px'
     class="app-icon-link"
     :title="title"
     :href="href"
-    target="_blank"
-    rel="noreferrer noopener"
+    :target="target"
+    :rel="rel"
   >
     <Icon
       :name="icon"
