@@ -1,8 +1,7 @@
 <template>
-  <v-btn
-    title="GitHub"
-    icon="mdi-github"
+  <AppIconLink
+    icon="mdi:github"
     href="https://github.com/munierujp/anohi-no-tweet"
-    target="_blank"
+    title="GitHub"
   />
 </template>
