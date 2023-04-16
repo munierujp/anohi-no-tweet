@@ -4,6 +4,7 @@ defineProps<{
   icon: string
   title?: string
 }>()
+const size = '24px'
 </script>
 
 <template>
@@ -14,14 +15,14 @@ defineProps<{
   >
     <Icon
       :name="icon"
-      size="24px"
+      :size="size"
     />
   </button>
 </template>
 
 <style lang="scss" scoped>
 $size: 48px;
-$icon-size: 24px;
+$icon-size: v-bind(size);
 
 .app-icon-button {
   border-radius: 50%;
