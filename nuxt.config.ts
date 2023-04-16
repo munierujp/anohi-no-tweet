@@ -76,13 +76,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  build: {
-    transpile: [
-      'vuetify'
-    ]
-  },
   css: [
-    'vuetify/lib/styles/main.sass',
     'element-plus/theme-chalk/dark/css-vars.css'
   ],
   modules: [

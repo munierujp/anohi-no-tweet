@@ -21,24 +21,6 @@ const config = {
     './node_modules/**/*'
   ],
   nodeRules: [
-    // https://vuetifyjs.com/en/api/v-text-field/
-    {
-      selector: 'v-text-field',
-      rules: {
-        'invalid-attr': {
-          options: {
-            allowAttrs: [
-              {
-                name: 'autofocus',
-                value: {
-                  type: 'Boolean'
-                }
-              }
-            ]
-          }
-        }
-      }
-    },
     // https://element-plus.org/en-US/component/input.html
     {
       selector: 'el-input',
