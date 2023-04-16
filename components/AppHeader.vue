@@ -1,5 +1,6 @@
 <template>
   <v-app-bar
+    id="header"
     color="transparent"
     absolute
     flat
@@ -10,3 +11,9 @@
     <AppGitHubButton />
   </v-app-bar>
 </template>
+
+<style lang="scss" scoped>
+#header {
+  padding-right: 8px;
+}
+</style>

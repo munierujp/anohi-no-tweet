@@ -9,9 +9,9 @@ const closeDialog = () => {
 </script>
 
 <template>
-  <v-btn
+  <AppIconButton
+    icon="mdi:help-circle"
     title="ヘルプ"
-    icon="mdi-help-circle"
     @click="openDialog"
   />
   <v-dialog

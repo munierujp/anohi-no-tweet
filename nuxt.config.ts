@@ -90,7 +90,8 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
-    '@element-plus/nuxt'
+    '@element-plus/nuxt',
+    'nuxt-icon'
   ],
   typescript: {
     strict: true
