@@ -77,7 +77,8 @@ export default defineNuxtConfig({
     }
   },
   css: [
-    'element-plus/theme-chalk/dark/css-vars.css'
+    'element-plus/theme-chalk/dark/css-vars.css',
+    '~/assets/main.scss'
   ],
   modules: [
     '@nuxtjs/eslint-module',
