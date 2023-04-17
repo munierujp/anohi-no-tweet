@@ -2,7 +2,7 @@
 import { parseISO } from 'date-fns'
 
 const formStore = useFormStore()
-const open = () => {
+const openTwitter = () => {
   const url = createTwitterSearchURL({
     user: formStore.user,
     date: parseISO(formStore.date),
@@ -17,7 +17,7 @@ const open = () => {
   <el-form-item>
     <el-button
       type="primary"
-      @click="open"
+      @click="openTwitter"
     >
       検索
     </el-button>

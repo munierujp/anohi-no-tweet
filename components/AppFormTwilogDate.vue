@@ -2,7 +2,7 @@
 import { parseISO } from 'date-fns'
 
 const formStore = useFormStore()
-const open = () => {
+const openTwilog = () => {
   const url = createTwilogDateURL({
     user: formStore.user,
     date: parseISO(formStore.date)
@@ -13,7 +13,7 @@ const open = () => {
 
 <template>
   <el-form-item>
-    <el-button @click="open">
+    <el-button @click="openTwilog">
       Twilog（日付）
     </el-button>
   </el-form-item>
