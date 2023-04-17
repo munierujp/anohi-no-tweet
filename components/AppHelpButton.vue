@@ -22,9 +22,3 @@ const openDialog = () => {
     </el-dialog>
   </client-only>
 </template>
-
-<style lang="scss">
-.app-dialog {
-  text-align: left;
-}
-</style>
