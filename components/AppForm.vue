@@ -2,13 +2,6 @@
 import { parseISO } from 'date-fns'
 
 const formStore = useFormStore()
-const onClickTwilogDateButton = () => {
-  const url = createTwilogDateURL({
-    user: formStore.user,
-    date: parseISO(formStore.date)
-  })
-  window.open(url)
-}
 const onClickTwilogSearchButton = () => {
   const url = createTwilogKeywordSearchURL({
     user: formStore.user,
@@ -39,11 +32,7 @@ const onClickTwisaveSearchButton = () => {
     <AppFormKeyword />
     <AppFormIncludesRetweets />
     <AppFormSearch />
-    <el-form-item>
-      <el-button @click="onClickTwilogDateButton">
-        Twilog（日付）
-      </el-button>
-    </el-form-item>
+    <AppFormTwilogDate />
     <el-form-item>
       <el-button @click="onClickTwilogSearchButton">
         Twilog（検索）
