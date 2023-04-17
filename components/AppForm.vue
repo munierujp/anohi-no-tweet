@@ -46,12 +46,7 @@ const onClickTwisaveSearchButton = () => {
     <AppFormUser />
     <AppFormDate />
     <AppFormKeyword />
-    <el-form-item>
-      <el-checkbox
-        v-model="formStore.includesRetweets"
-        label="リツイートを含む"
-      />
-    </el-form-item>
+    <AppFormIncludesRetweets />
     <el-form-item>
       <el-button
         type="primary"
