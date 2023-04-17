@@ -15,10 +15,18 @@ const openDialog = () => {
     <el-dialog
       v-model="showDialog"
       class="app-dialog"
-      width="min(calc(100vw - 16px), 600px)"
       align-center
     >
       <span>指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
     </el-dialog>
   </client-only>
 </template>
+
+<style lang="scss">
+$maxWidth: 600px;
+$margin: 8px;
+
+.app-dialog {
+  width: min(calc(100vw - $margin * 2), $maxWidth);
+}
+</style>
