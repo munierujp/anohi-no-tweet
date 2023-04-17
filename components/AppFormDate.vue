@@ -6,13 +6,13 @@ import {
 
 const form = useFormStore()
 const now = new Date()
-const onClickTodayButton = () => {
+const setToToday = () => {
   form.date = formatISODate(now)
 }
-const onClickYesterdayButton = () => {
+const setToYesterday = () => {
   form.date = formatISODate(subDays(now, 1))
 }
-const onClickOneYearAgoButton = () => {
+const setToOneYearAgo = () => {
   form.date = formatISODate(subYears(now, 1))
 }
 </script>
@@ -29,19 +29,19 @@ const onClickOneYearAgoButton = () => {
   <el-form-item>
     <el-button
       size="small"
-      @click="onClickTodayButton"
+      @click="setToToday"
     >
       今日
     </el-button>
     <el-button
       size="small"
-      @click="onClickYesterdayButton"
+      @click="setToYesterday"
     >
       昨日
     </el-button>
     <el-button
       size="small"
-      @click="onClickOneYearAgoButton"
+      @click="setToOneYearAgo"
     >
       1年前
     </el-button>
