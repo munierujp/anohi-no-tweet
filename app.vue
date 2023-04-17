@@ -11,10 +11,3 @@ import ja from 'element-plus/es/locale/lang/ja'
     </el-container>
   </el-config-provider>
 </template>
-
-<style lang="scss">
-body {
-  background-color: #15202B;
-  color: #F7F9F9;
-}
-</style>
