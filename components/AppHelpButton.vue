@@ -23,10 +23,8 @@ const openDialog = () => {
 </template>
 
 <style lang="scss">
-$maxWidth: 600px;
-$margin: 8px;
-
 .app-dialog {
-  width: min(calc(100vw - $margin * 2), $maxWidth);
+  max-width: 600px;
+  width: calc(100vw - 8px * 2);
 }
 </style>
