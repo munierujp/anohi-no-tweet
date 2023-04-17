@@ -2,16 +2,7 @@
   <el-main id="main">
     <el-row>
       <el-col>
-        <h1 id="heading">
-          <img
-            id="logo"
-            src="/logo.png"
-            alt="#あの日のツイートを表示するやつ"
-            width="499"
-            height="32"
-            decoding="async"
-          >
-        </h1>
+        <AppLogo id="logo" />
       </el-col>
     </el-row>
     <el-row justify="center">
@@ -29,12 +20,7 @@
 </template>
 
 <style lang="scss" scoped>
-#heading {
-  text-align: center;
-}
-
 #logo {
-  max-width: 100%;
-  height: auto;
+  text-align: center;
 }
 </style>
