@@ -57,14 +57,7 @@ const onClickTwisaveSearchButton = () => {
 
 <template>
   <el-form label-position="top">
-    <el-form-item label="ユーザー">
-      <el-input
-        v-model="formStore.user"
-        placeholder="munieru_jp"
-        clearable
-        autofocus
-      />
-    </el-form-item>
+    <AppFormUser />
     <el-form-item label="日付">
       <el-date-picker
         v-model="formStore.date"
