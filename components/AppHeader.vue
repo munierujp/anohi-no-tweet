@@ -11,6 +11,7 @@
 
 <style lang="scss" scoped>
 #header {
-  text-align: right;
+  display: flex;
+  justify-content: right;
 }
 </style>
