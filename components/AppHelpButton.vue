@@ -3,9 +3,6 @@ const showDialog = ref(false)
 const openDialog = () => {
   showDialog.value = true
 }
-const closeDialog = () => {
-  showDialog.value = false
-}
 </script>
 
 <template>
@@ -14,20 +11,20 @@ const closeDialog = () => {
     title="ヘルプ"
     @click="openDialog"
   />
-  <v-dialog
-    v-model="showDialog"
-    width="auto"
-  >
-    <v-card>
-      <v-card-text>指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開きます。</v-card-text>
-      <v-card-actions>
-        <v-btn
-          block
-          @click="closeDialog"
-        >
-          閉じる
-        </v-btn>
-      </v-card-actions>
-    </v-card>
-  </v-dialog>
+  <client-only>
+    <el-dialog
+      v-model="showDialog"
+      class="app-dialog"
+      align-center
+    >
+      <span>指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開きます。</span>
+    </el-dialog>
+  </client-only>
 </template>
+
+<style lang="scss">
+.app-dialog {
+  max-width: 600px;
+  width: calc(100vw - 8px * 2);
+}
+</style>

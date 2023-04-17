@@ -33,6 +33,8 @@ $icon-size: v-bind(iconSize);
 .app-icon-link {
   border-radius: 50%;
   color: unset;
+  display: inline-block;
   padding: calc(($size - $icon-size) / 2);
+  text-decoration: none;
 }
 </style>

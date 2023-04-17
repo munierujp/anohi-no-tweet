@@ -25,7 +25,12 @@ $size: 48px;
 $icon-size: v-bind(iconSize);
 
 .app-icon-button {
+  appearance: none;
+  background-color: transparent;
   border-radius: 50%;
+  border: none;
+  color: inherit;
+  cursor: pointer;
   padding: calc(($size - $icon-size) / 2);
 }
 </style>

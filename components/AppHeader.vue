@@ -1,19 +1,17 @@
 <template>
-  <v-app-bar
+  <el-header
     id="header"
-    color="transparent"
-    absolute
-    flat
+    height="auto"
   >
-    <v-spacer />
     <AppHelpButton />
     <AppTwitterButton />
     <AppGitHubButton />
-  </v-app-bar>
+  </el-header>
 </template>
 
 <style lang="scss" scoped>
 #header {
-  padding-right: 8px;
+  display: flex;
+  justify-content: right;
 }
 </style>
