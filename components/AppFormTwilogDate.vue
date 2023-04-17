@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import { parseISO } from 'date-fns'
 
-const formStore = useFormStore()
+const form = useFormStore()
 const openTwilog = () => {
   const url = createTwilogDateURL({
-    user: formStore.user,
-    date: parseISO(formStore.date)
+    user: form.user,
+    date: parseISO(form.date)
   })
   window.open(url)
 }

@@ -1,16 +1,16 @@
 <script lang="ts" setup>
-const formStore = useFormStore()
+const form = useFormStore()
 const onClickTwilogSearchButton = () => {
   const url = createTwilogKeywordSearchURL({
-    user: formStore.user,
-    keyword: formStore.keyword
+    user: form.user,
+    keyword: form.keyword
   })
   window.open(url)
 }
 const onClickTwisaveSearchButton = () => {
   const url = createTwisaveKeywordSearchURL({
-    user: formStore.user,
-    keyword: formStore.keyword
+    user: form.user,
+    keyword: form.keyword
   })
   window.open(url)
 }

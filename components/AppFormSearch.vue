@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { parseISO } from 'date-fns'
 
-const formStore = useFormStore()
+const form = useFormStore()
 const openTwitter = () => {
   const url = createTwitterSearchURL({
-    user: formStore.user,
-    date: parseISO(formStore.date),
-    keyword: formStore.keyword,
-    includesRetweets: formStore.includesRetweets
+    user: form.user,
+    date: parseISO(form.date),
+    keyword: form.keyword,
+    includesRetweets: form.includesRetweets
   })
   window.open(url)
 }

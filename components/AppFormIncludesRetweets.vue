@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-const formStore = useFormStore()
+const form = useFormStore()
 </script>
 
 <template>
   <el-form-item>
     <el-checkbox
-      v-model="formStore.includesRetweets"
+      v-model="form.includesRetweets"
       label="リツイートを含む"
     />
   </el-form-item>

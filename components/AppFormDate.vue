@@ -4,23 +4,23 @@ import {
   subYears
 } from 'date-fns'
 
-const formStore = useFormStore()
+const form = useFormStore()
 const now = new Date()
 const onClickTodayButton = () => {
-  formStore.date = formatISODate(now)
+  form.date = formatISODate(now)
 }
 const onClickYesterdayButton = () => {
-  formStore.date = formatISODate(subDays(now, 1))
+  form.date = formatISODate(subDays(now, 1))
 }
 const onClickOneYearAgoButton = () => {
-  formStore.date = formatISODate(subYears(now, 1))
+  form.date = formatISODate(subYears(now, 1))
 }
 </script>
 
 <template>
   <el-form-item label="日付">
     <el-date-picker
-      v-model="formStore.date"
+      v-model="form.date"
       type="date"
       value-format="YYYY-MM-DD"
       clearable

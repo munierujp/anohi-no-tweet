@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-const formStore = useFormStore()
+const form = useFormStore()
 </script>
 
 <template>
   <el-form-item label="ユーザー">
     <el-input
-      v-model="formStore.user"
+      v-model="form.user"
       placeholder="munieru_jp"
       clearable
       autofocus

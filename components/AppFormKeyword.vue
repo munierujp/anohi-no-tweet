@@ -1,11 +1,11 @@
 <script lang="ts" setup>
-const formStore = useFormStore()
+const form = useFormStore()
 </script>
 
 <template>
   <el-form-item label="キーワード">
     <el-input
-      v-model="formStore.keyword"
+      v-model="form.keyword"
       clearable
     />
   </el-form-item>
