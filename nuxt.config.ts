@@ -102,6 +102,7 @@ export default defineNuxtConfig({
       short_name: APP_NAME_SHORT,
       description: APP_DESCRIPTION,
       theme_color: '#1DA1F2',
+      // TODO: ここの色はダークブルーでいいのか？
       background_color: '#15202B',
       icons: [
         {
