@@ -1,4 +1,14 @@
 body {
+  background-color: #ffffff;
+  color: #0F141A;
+}
+
+body[data-theme="darkblue"] {
   background-color: #15202B;
   color: #F7F9F9;
+}
+
+body[data-theme="black"] {
+  background-color: #000000;
+  color: #E7E9EA;
 }
