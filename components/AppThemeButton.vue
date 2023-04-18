@@ -30,58 +30,49 @@ const closeDialog = () => {
     title="テーマ"
     @click="openDialog"
   />
-  <client-only>
-    <el-dialog
-      v-model="showDialog"
-      title="テーマ"
-      class="app-dialog"
-      align-center
+  <AppDialog
+    v-model="showDialog"
+    title="テーマ"
+  >
+    <el-radio-group
+      v-model="theme"
+      class="app-theme-buttons"
     >
-      <el-radio-group
-        v-model="theme"
-        class="app-theme-buttons"
+      <el-radio
+        class="app-theme-button"
+        :border="true"
+        label="white"
       >
-        <el-radio
-          class="app-theme-button"
-          :border="true"
-          label="white"
-        >
-          ホワイト
-        </el-radio>
-        <el-radio
-          class="app-theme-button"
-          :border="true"
-          label="darkblue"
-        >
-          ダークブルー
-        </el-radio>
-        <el-radio
-          class="app-theme-button"
-          :border="true"
-          label="black"
-        >
-          ブラック
-        </el-radio>
-      </el-radio-group>
-      <template #footer>
-        <el-button
-          :circle="false"
-          type="primary"
-          @click="closeDialog"
-        >
-          OK
-        </el-button>
-      </template>
-    </el-dialog>
-  </client-only>
+        ホワイト
+      </el-radio>
+      <el-radio
+        class="app-theme-button"
+        :border="true"
+        label="darkblue"
+      >
+        ダークブルー
+      </el-radio>
+      <el-radio
+        class="app-theme-button"
+        :border="true"
+        label="black"
+      >
+        ブラック
+      </el-radio>
+    </el-radio-group>
+    <template #footer>
+      <el-button
+        :circle="false"
+        type="primary"
+        @click="closeDialog"
+      >
+        OK
+      </el-button>
+    </template>
+  </AppDialog>
 </template>
 
 <style lang="scss">
-.app-dialog {
-  max-width: 600px;
-  width: calc(100vw - 8px * 2);
-}
-
 .app-theme-buttons {
   display: flex;
   flex-direction: column;
