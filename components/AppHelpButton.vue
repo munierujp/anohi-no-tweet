@@ -14,6 +14,7 @@ const openDialog = () => {
   <client-only>
     <el-dialog
       v-model="showDialog"
+      title="ヘルプ"
       class="app-dialog"
       align-center
     >
