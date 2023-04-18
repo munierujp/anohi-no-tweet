@@ -1,8 +1,13 @@
+<script lang="ts" setup>
+const config = useConfigStore()
+const path = computed(() => `/logo_${config.theme}.png`)
+</script>
+
 <template>
   <h1>
     <img
       class="app-logo-image"
-      src="/logo_darkblue.png"
+      :src="path"
       alt="#あの日のツイートを表示するやつ"
       width="499"
       height="32"
