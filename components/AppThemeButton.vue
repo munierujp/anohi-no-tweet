@@ -12,6 +12,9 @@ useHead({
     'data-theme': theme
   }
 })
+watch(theme, (theme) => {
+  config.theme = theme
+})
 const showDialog = ref(false)
 const openDialog = () => {
   showDialog.value = true
