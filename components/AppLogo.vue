@@ -2,7 +2,7 @@
   <h1>
     <img
       class="app-logo-image"
-      src="/logo.png"
+      src="/logo_darkblue.png"
       alt="#あの日のツイートを表示するやつ"
       width="499"
       height="32"
