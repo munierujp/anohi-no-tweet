@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 const config = useConfigStore()
 const theme = ref(config.theme)
+watch(theme, (theme) => {
+  config.theme = theme
+})
 const dark = computed(() => theme.value === 'darkblue' || theme.value === 'black')
 useHead({
   htmlAttrs: {
@@ -11,9 +14,6 @@ useHead({
   bodyAttrs: {
     'data-theme': theme
   }
-})
-watch(theme, (theme) => {
-  config.theme = theme
 })
 const showDialog = ref(false)
 const openDialog = () => {
