@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 const form = useFormStore()
-const style = reactive({
+const style = ref({
   '--el-checkbox-checked-text-color': 'inherit'
 })
 </script>
