@@ -70,10 +70,7 @@ export default defineNuxtConfig({
           href: '/apple-touch-icon.png',
           sizes: '180x180'
         }
-      ],
-      htmlAttrs: {
-        class: ['dark']
-      }
+      ]
     }
   },
   css: [
