@@ -83,7 +83,8 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@element-plus/nuxt',
-    'nuxt-icon'
+    'nuxt-icon',
+    '@vueuse/nuxt'
   ],
   typescript: {
     strict: true
