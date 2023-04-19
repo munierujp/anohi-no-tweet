@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const appConfig = useAppConfig()
 const config = useConfigStore()
 const theme = ref(config.theme)
 watch(theme, (theme) => {
@@ -38,27 +39,18 @@ const closeDialog = () => {
       v-model="theme"
       class="app-theme-buttons"
     >
-      <el-radio
-        class="app-theme-button"
-        :border="true"
-        label="white"
+      <template
+        v-for="item in appConfig.themes"
+        :key="item.value"
       >
-        ホワイト
-      </el-radio>
-      <el-radio
-        class="app-theme-button"
-        :border="true"
-        label="darkblue"
-      >
-        ダークブルー
-      </el-radio>
-      <el-radio
-        class="app-theme-button"
-        :border="true"
-        label="black"
-      >
-        ブラック
-      </el-radio>
+        <el-radio
+          class="app-theme-button"
+          :border="true"
+          :label="item.value"
+        >
+          {{ item.name }}
+        </el-radio>
+      </template>
     </el-radio-group>
     <template #footer>
       <el-button
