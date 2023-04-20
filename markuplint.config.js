@@ -19,7 +19,7 @@ const config = {
   },
   excludeFiles: [
     './node_modules/**/*',
-    './components/AppLogoImage.vue'
+    './components/AppLogo.vue'
   ],
   nodeRules: [
     // https://element-plus.org/en-US/component/input.html
