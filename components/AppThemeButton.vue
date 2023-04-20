@@ -36,6 +36,7 @@ const closeDialog = () => {
     v-model="showDialog"
     title="テーマ"
   >
+    <span>お好みのテーマを選んでください。</span>
     <el-radio-group
       v-model="theme"
       class="app-theme-buttons"
@@ -70,6 +71,7 @@ const closeDialog = () => {
 .app-theme-buttons {
   display: flex;
   flex-direction: column;
+  margin-top: 8px;
 }
 
 .app-theme-button {
