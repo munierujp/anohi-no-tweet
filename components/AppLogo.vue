@@ -16,7 +16,7 @@ const color = computed(() => config.themes.find(({ value }) => value === theme.v
 
 <style lang="scss" scoped>
 .app-logo-image {
-  fill: var(--app-color);
+  fill: var(--app-text-color);
   width: 499px;
   max-width: 100%;
 }
