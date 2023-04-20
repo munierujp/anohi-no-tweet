@@ -41,16 +41,16 @@ const closeDialog = () => {
       class="app-theme-buttons"
     >
       <template
-        v-for="item in config.themes"
-        :key="item.value"
+        v-for="{ name, value, style } in config.themes"
+        :key="value"
       >
         <el-radio
           class="app-theme-button"
           :border="true"
-          :label="item.value"
-          :style="item.style"
+          :label="value"
+          :style="style"
         >
-          {{ item.name }}
+          {{ name }}
         </el-radio>
       </template>
     </el-radio-group>
