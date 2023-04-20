@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const appConfig = useAppConfig()
+const config = useAppConfig()
 const settings = useSettingsStore()
 const theme = ref(settings.theme)
 watch(theme, (theme) => {
@@ -40,7 +40,7 @@ const closeDialog = () => {
       class="app-theme-buttons"
     >
       <template
-        v-for="item in appConfig.themes"
+        v-for="item in config.themes"
         :key="item.value"
       >
         <el-radio
