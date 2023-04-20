@@ -5,7 +5,8 @@ const theme = ref(settings.theme)
 watch(theme, (theme) => {
   settings.theme = theme
 })
-const dark = computed(() => theme.value === 'darkblue' || theme.value === 'black')
+const darkThemes = new Set(config.themes.filter(({ dark }) => dark).map(({ value }) => value))
+const dark = computed(() => darkThemes.has(theme.value))
 useHead({
   htmlAttrs: {
     class: {
