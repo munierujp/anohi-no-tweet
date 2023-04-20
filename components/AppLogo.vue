@@ -14,6 +14,8 @@ const path = computed(() => `/logo_${theme.value}.png`)
       decoding="async"
     >
   </h1>
+  <div>theme: {{ theme }}</div>
+  <div>path: {{ path }}</div>
 </template>
 
 <style lang="scss" scoped>
