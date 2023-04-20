@@ -32,6 +32,7 @@
     "npm-run-all2": "6.0.5",
     "nuxt": "3.2.3",
     "nuxt-icon": "0.3.3",
+    "nuxt-svgo": "1.2.1",
     "pinia": "2.0.34",
     "sass": "1.62.0",
     "vitest": "0.30.1"
