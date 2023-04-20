@@ -47,10 +47,7 @@ const closeDialog = () => {
           class="app-theme-button"
           :border="true"
           :label="item.value"
-          :style="{
-            'background-color': item.backgroundColor,
-            color: item.color
-          }"
+          :style="item.style"
         >
           {{ item.name }}
         </el-radio>
