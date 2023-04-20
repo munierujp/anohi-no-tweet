@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const settings = useSettingsStore()
-const path = computed(() => `/logo_${settings.theme}.png`)
+const theme = useTheme()
+const path = computed(() => `/logo_${theme.value}.png`)
 </script>
 
 <template>
