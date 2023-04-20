@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 const appConfig = useAppConfig()
-const config = useConfigStore()
-const theme = ref(config.theme)
+const settings = useSettingsStore()
+const theme = ref(settings.theme)
 watch(theme, (theme) => {
-  config.theme = theme
+  settings.theme = theme
 })
 const dark = computed(() => theme.value === 'darkblue' || theme.value === 'black')
 useHead({

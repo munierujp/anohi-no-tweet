@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-const config = useConfigStore()
-const path = computed(() => `/logo_${config.theme}.png`)
+const settings = useSettingsStore()
+const path = computed(() => `/logo_${settings.theme}.png`)
 </script>
 
 <template>
