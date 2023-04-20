@@ -47,6 +47,10 @@ const closeDialog = () => {
           class="app-theme-button"
           :border="true"
           :label="item.value"
+          :style="{
+            'background-color': item.backgroundColor,
+            color: item.color
+          }"
         >
           {{ item.name }}
         </el-radio>
@@ -73,6 +77,10 @@ const closeDialog = () => {
 .app-theme-button {
   width: 130px;
   margin: 0;
+
+  .el-radio__input.is-checked+.el-radio__label {
+    color: unset;
+  }
 }
 
 .app-theme-button:not(:first-child){
