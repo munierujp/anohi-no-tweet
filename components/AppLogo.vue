@@ -1,26 +1,22 @@
 <script lang="ts" setup>
+const config = useAppConfig()
 const theme = useTheme()
-const path = computed(() => `/logo_${theme.value}.png`)
+const color = computed(() => config.themes.find(({ value }) => value === theme.value)?.style.color)
 </script>
 
 <template>
   <h1>
-    <img
+    <AppLogoImage
       class="app-logo-image"
-      :src="path"
+      :color="color"
       alt="#あの日のツイートを表示するやつ"
-      width="499"
-      height="32"
-      decoding="async"
-    >
+    />
   </h1>
-  <div>theme: {{ theme }}</div>
-  <div>path: {{ path }}</div>
 </template>
 
 <style lang="scss" scoped>
 .app-logo-image {
+  width: 499px;
   max-width: 100%;
-  height: auto;
 }
 </style>
