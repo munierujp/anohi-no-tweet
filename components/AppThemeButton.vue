@@ -76,12 +76,12 @@ const closeDialog = () => {
   width: 130px;
   margin: 0;
 
+  &:not(:first-child){
+    margin-top: 8px;
+  }
+
   .el-radio__input.is-checked+.el-radio__label {
     color: unset;
   }
-}
-
-.app-theme-button:not(:first-child){
-  margin-top: 8px;
 }
 </style>
