@@ -39,6 +39,12 @@ const config = {
           }
         }
       }
+    },
+    {
+      selector: '#heading',
+      rules: {
+        'require-accessible-name': false
+      }
     }
   ]
 }

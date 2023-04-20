@@ -2,11 +2,8 @@
   <el-main id="main">
     <el-row>
       <el-col>
-        <h1 class="app-logo">
-          <AppLogo
-            class="app-logo-image"
-            alt="#あの日のツイートを表示するやつ"
-          />
+        <h1 id="heading">
+          <AppLogo id="logo" />
         </h1>
       </el-col>
     </el-row>
@@ -25,13 +22,12 @@
 </template>
 
 <style lang="scss" scoped>
-.app-logo {
+#heading {
   text-align: center;
 }
 
-.app-logo-image {
-  fill: var(--app-text-color);
-  width: 499px;
+#logo {
+  width: 600px;
   max-width: 100%;
 }
 </style>
