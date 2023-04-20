@@ -71,7 +71,7 @@ const closeDialog = () => {
 .app-theme-buttons {
   display: flex;
   flex-direction: column;
-  margin-top: 8px;
+  margin-top: 40px;
 }
 
 .app-theme-button {
