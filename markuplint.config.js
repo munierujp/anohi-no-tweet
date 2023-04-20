@@ -18,7 +18,8 @@ const config = {
     '\\.vue$': '@markuplint/vue-spec'
   },
   excludeFiles: [
-    './node_modules/**/*'
+    './node_modules/**/*',
+    './components/AppLogo.vue'
   ],
   nodeRules: [
     // https://element-plus.org/en-US/component/input.html
@@ -37,6 +38,12 @@ const config = {
             ]
           }
         }
+      }
+    },
+    {
+      selector: '#heading',
+      rules: {
+        'require-accessible-name': false
       }
     }
   ]

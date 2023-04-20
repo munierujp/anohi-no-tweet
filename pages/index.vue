@@ -2,7 +2,9 @@
   <el-main id="main">
     <el-row>
       <el-col>
-        <AppLogo id="logo" />
+        <h1 id="heading">
+          <AppLogo id="logo" />
+        </h1>
       </el-col>
     </el-row>
     <el-row justify="center">
@@ -20,7 +22,12 @@
 </template>
 
 <style lang="scss" scoped>
-#logo {
+#heading {
   text-align: center;
+}
+
+#logo {
+  width: 600px;
+  max-width: 100%;
 }
 </style>

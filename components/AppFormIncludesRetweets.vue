@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 const form = useFormStore()
 const style = reactive({
-  '--el-checkbox-checked-text-color': 'inherit'
+  '--el-checkbox-checked-text-color': 'unset'
 })
 </script>
 

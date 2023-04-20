@@ -70,10 +70,7 @@ export default defineNuxtConfig({
           href: '/apple-touch-icon.png',
           sizes: '180x180'
         }
-      ],
-      htmlAttrs: {
-        class: ['dark']
-      }
+      ]
     }
   },
   css: [
@@ -102,7 +99,7 @@ export default defineNuxtConfig({
       short_name: APP_NAME_SHORT,
       description: APP_DESCRIPTION,
       theme_color: '#1DA1F2',
-      background_color: '#15202B',
+      background_color: '#ffffff',
       icons: [
         {
           src: 'pwa-192x192.png',

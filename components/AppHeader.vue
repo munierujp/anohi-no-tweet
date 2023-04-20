@@ -4,6 +4,7 @@
     height="auto"
   >
     <AppHelpButton />
+    <AppThemeButton />
     <AppTwitterButton />
     <AppGitHubButton />
   </el-header>
