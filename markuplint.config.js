@@ -21,6 +21,12 @@ const config = {
     './node_modules/**/*'
   ],
   nodeRules: [
+    {
+      selector: 'svg',
+      rules: {
+        'require-accessible-name': false
+      }
+    },
     // https://element-plus.org/en-US/component/input.html
     {
       selector: 'el-input',
