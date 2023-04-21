@@ -114,5 +114,8 @@ export default defineNuxtConfig({
       ],
       display: 'standalone'
     }
+  },
+  piniaPersistedstate: {
+    storage: 'localStorage'
   }
 })
