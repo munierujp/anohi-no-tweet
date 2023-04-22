@@ -9,10 +9,10 @@ const config = useAppConfig()
   >
     <el-row>
       <el-col>
-        <small>© Munieru</small>
+        <small>{{ config.name }} v{{ config.version }}</small>
       </el-col>
       <el-col>
-        <small>{{ config.name }} v{{ config.version }}</small>
+        <small>© Munieru</small>
       </el-col>
     </el-row>
   </el-footer>
