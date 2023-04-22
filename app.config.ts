@@ -32,6 +32,7 @@ const themes: Theme[] = [
 ]
 
 export default defineAppConfig({
+  name: '#あの日のツイートを表示するやつ',
   themes,
   version
 })

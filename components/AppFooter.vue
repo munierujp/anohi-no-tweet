@@ -12,7 +12,7 @@ const config = useAppConfig()
         <small>© Munieru</small>
       </el-col>
       <el-col>
-        <small>#あの日のツイートを表示するやつ v{{ config.version }}</small>
+        <small>{{ config.name }} v{{ config.version }}</small>
       </el-col>
     </el-row>
   </el-footer>
