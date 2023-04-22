@@ -1,3 +1,4 @@
+import { version } from './package.json'
 import type { Theme } from './types/Theme'
 
 const themes: Theme[] = [
@@ -31,5 +32,6 @@ const themes: Theme[] = [
 ]
 
 export default defineAppConfig({
-  themes
+  themes,
+  version
 })
