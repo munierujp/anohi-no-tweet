@@ -27,7 +27,7 @@
     "@pinia/nuxt": "0.4.9",
     "@vite-pwa/nuxt": "0.0.7",
     "date-fns": "2.29.3",
-    "eslint": "8.38.0",
+    "eslint": "8.39.0",
     "markuplint": "3.8.0",
     "npm-run-all2": "6.0.5",
     "nuxt": "3.2.3",
