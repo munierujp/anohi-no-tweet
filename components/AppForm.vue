@@ -11,10 +11,18 @@ const openTwitter = () => {
   })
   window.open(url)
 }
+const handleEnter = (event: KeyboardEvent) => {
+  if (event.keyCode === 13) {
+    openTwitter()
+  }
+}
 </script>
 
 <template>
-  <el-form label-position="top">
+  <el-form
+    label-position="top"
+    @keydown.enter="handleEnter"
+  >
     <AppFormUser />
     <AppFormDate />
     <AppFormKeyword />
