@@ -76,7 +76,12 @@ const handleEnter = (event: KeyboardEvent) => {
         1年前
       </el-button>
     </el-form-item>
-    <AppFormKeyword />
+    <el-form-item label="キーワード">
+      <el-input
+        v-model="form.keyword"
+        clearable
+      />
+    </el-form-item>
     <AppFormIncludesRetweets />
     <el-form-item>
       <el-button
