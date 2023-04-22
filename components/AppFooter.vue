@@ -12,7 +12,6 @@ const config = useAppConfig()
         <small>© Munieru</small>
       </el-col>
       <el-col>
-        <!-- TODO: バージョンは package.json のものを使うようにする -->
         <small>#あの日のツイートを表示するやつ v{{ config.version }}</small>
       </el-col>
     </el-row>
