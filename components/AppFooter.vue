@@ -1,15 +1,25 @@
+<script lang="ts" setup>
+const config = useAppConfig()
+</script>
+
 <template>
   <el-footer
     id="footer"
     height="auto"
   >
-    <small>© Munieru</small>
+    <el-row>
+      <el-col>
+        <small>{{ config.name }} v{{ config.version }}</small>
+      </el-col>
+      <el-col>
+        <small>© Munieru</small>
+      </el-col>
+    </el-row>
   </el-footer>
 </template>
 
 <style lang="scss" scoped>
 #footer {
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 </style>
