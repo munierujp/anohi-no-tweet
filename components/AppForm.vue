@@ -23,7 +23,14 @@ const handleEnter = (event: KeyboardEvent) => {
     label-position="top"
     @keydown.enter="handleEnter"
   >
-    <AppFormUser />
+    <el-form-item label="ユーザー">
+      <el-input
+        v-model="form.user"
+        placeholder="munieru_jp"
+        clearable
+        autofocus
+      />
+    </el-form-item>
     <AppFormDate />
     <AppFormKeyword />
     <AppFormIncludesRetweets />
