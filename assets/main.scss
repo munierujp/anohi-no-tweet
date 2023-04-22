@@ -17,3 +17,7 @@ body {
   background-color: var(--app-background-color);
   color: var(--app-text-color);
 }
+
+.el-checkbox {
+  --el-checkbox-checked-text-color: unset !important
+}

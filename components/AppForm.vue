@@ -82,7 +82,12 @@ const handleEnter = (event: KeyboardEvent | Event) => {
         @keydown.enter="handleEnter"
       />
     </el-form-item>
-    <AppFormIncludesRetweets />
+    <el-form-item>
+      <el-checkbox
+        v-model="form.includesRetweets"
+        label="リツイートを含む"
+      />
+    </el-form-item>
     <el-form-item>
       <el-button
         type="primary"
