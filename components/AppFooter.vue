@@ -21,8 +21,6 @@ const config = useAppConfig()
 
 <style lang="scss" scoped>
 #footer {
-  display: flex;
-  justify-content: center;
   text-align: center;
 }
 </style>
