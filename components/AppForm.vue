@@ -25,24 +25,22 @@ const openTwitter = () => {
   })
   window.open(url)
 }
-const handleEnter = (event: KeyboardEvent) => {
-  if (event.keyCode === 13) {
+const handleEnter = (event: KeyboardEvent | Event) => {
+  if (event instanceof KeyboardEvent && event.keyCode === 13) {
     openTwitter()
   }
 }
 </script>
 
 <template>
-  <el-form
-    label-position="top"
-    @keydown.enter="handleEnter"
-  >
+  <el-form label-position="top">
     <el-form-item label="ユーザー">
       <el-input
         v-model="form.user"
         placeholder="munieru_jp"
         clearable
         autofocus
+        @keydown.enter="handleEnter"
       />
     </el-form-item>
     <el-form-item label="日付">
@@ -51,6 +49,7 @@ const handleEnter = (event: KeyboardEvent) => {
         type="date"
         value-format="YYYY-MM-DD"
         clearable
+        @keydown.enter="handleEnter"
       />
     </el-form-item>
     <el-form-item>
@@ -80,6 +79,7 @@ const handleEnter = (event: KeyboardEvent) => {
       <el-input
         v-model="form.keyword"
         clearable
+        @keydown.enter="handleEnter"
       />
     </el-form-item>
     <AppFormIncludesRetweets />
