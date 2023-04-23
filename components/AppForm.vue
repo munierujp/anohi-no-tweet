@@ -51,6 +51,13 @@ const openTwisaveDate = () => {
   })
   window.open(url)
 }
+const openTwisaveSearch = () => {
+  const url = createTwisaveKeywordSearchURL({
+    user: form.user,
+    keyword: form.keyword
+  })
+  window.open(url)
+}
 </script>
 
 <template>
@@ -142,6 +149,13 @@ const openTwisaveDate = () => {
         ツイセーブ（日付）
       </el-button>
     </el-form-item>
-    <AppFormTwisaveSearch />
+    <el-form-item>
+      <el-button
+        :circle="false"
+        @click="openTwisaveSearch"
+      >
+        ツイセーブ（検索）
+      </el-button>
+    </el-form-item>
   </el-form>
 </template>
