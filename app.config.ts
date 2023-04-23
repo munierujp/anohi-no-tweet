@@ -1,6 +1,14 @@
 import { version } from './package.json'
 import type { Theme } from './types/Theme'
 
+declare module '@nuxt/schema' {
+  interface AppConfigInput {
+    name: string
+    themes: Theme[]
+    version: string
+  }
+}
+
 const themes: Theme[] = [
   {
     name: 'ホワイト',
