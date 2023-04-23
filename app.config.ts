@@ -1,8 +1,12 @@
-import { version } from './package.json'
+import {
+  description,
+  version
+} from './package.json'
 import type { Theme } from './types/Theme'
 
 declare module '@nuxt/schema' {
   interface AppConfigInput {
+    description: string
     name: string
     themes: Theme[]
     version: string
@@ -40,6 +44,7 @@ const themes: Theme[] = [
 ]
 
 export default defineAppConfig({
+  description,
   name: '#あの日のツイートを表示するやつ',
   themes,
   version
