@@ -18,6 +18,7 @@ const config = {
     '\\.vue$': '@markuplint/vue-spec'
   },
   excludeFiles: [
+    './dist/**/*',
     './node_modules/**/*',
     './components/AppLogo.vue'
   ],
