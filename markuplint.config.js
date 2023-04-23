@@ -19,6 +19,7 @@ const config = {
   },
   excludeFiles: [
     './.nuxt/**/*',
+    './.output/**/*',
     './dist/**/*',
     './node_modules/**/*',
     './components/AppLogo.vue'
