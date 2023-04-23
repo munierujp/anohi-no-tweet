@@ -78,6 +78,7 @@ export default defineNuxtConfig({
     '~/assets/main.scss'
   ],
   modules: [
+    '@nuxtjs/eslint-module',
     '@vite-pwa/nuxt',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
