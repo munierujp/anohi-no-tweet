@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 const props = defineProps<{
-  fullscreen?: boolean
-  modelValue: boolean
+  modelValue: boolean,
   title?: string
 }>()
 // eslint-disable-next-line func-call-spacing
@@ -22,9 +21,8 @@ const showDialog = computed<boolean>({
   <client-only>
     <el-dialog
       v-model="showDialog"
-      class="app-dialog"
       :title="title"
-      :fullscreen="fullscreen"
+      class="app-dialog"
       align-center
     >
       <slot />
@@ -37,11 +35,8 @@ const showDialog = computed<boolean>({
 
 <style lang="scss">
 .app-dialog {
-  word-break: break-word;
-
-  &:not(.is-fullscreen) {
-    width: 600px;
-    max-width: calc(100vw - 8px * 2);
-  }
+  width: calc(100vw - 8px * 2);
+  max-width: 600px;
+  word-break: break-word
 }
 </style>
