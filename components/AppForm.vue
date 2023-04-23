@@ -37,6 +37,13 @@ const openTwilogDate = () => {
   })
   window.open(url)
 }
+const openTwilogSearch = () => {
+  const url = createTwilogKeywordSearchURL({
+    user: form.user,
+    keyword: form.keyword
+  })
+  window.open(url)
+}
 </script>
 
 <template>
@@ -112,7 +119,14 @@ const openTwilogDate = () => {
         Twilog（日付）
       </el-button>
     </el-form-item>
-    <AppFormTwilogSearch />
+    <el-form-item>
+      <el-button
+        :circle="false"
+        @click="openTwilogSearch"
+      >
+        Twilog（検索）
+      </el-button>
+    </el-form-item>
     <AppFormTwisaveDate />
     <AppFormTwisaveSearch />
   </el-form>
