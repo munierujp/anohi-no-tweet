@@ -43,5 +43,9 @@ const showDialog = computed<boolean>({
     width: 600px;
     max-width: calc(100vw - 8px * 2);
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 </style>
