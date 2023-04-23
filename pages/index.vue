@@ -1,13 +1,11 @@
 <template>
   <el-main id="main">
-    <el-row>
+    <el-row justify="center">
       <el-col>
         <h1 id="heading">
           <AppLogo id="logo" />
         </h1>
       </el-col>
-    </el-row>
-    <el-row justify="center">
       <el-col
         :xs="24"
         :sm="12"
