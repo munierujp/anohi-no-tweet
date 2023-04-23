@@ -18,6 +18,7 @@ const closeDialog = () => {
   <AppDialog
     v-model="showDialog"
     title="ヘルプ"
+    fullscreen
   >
     <h2>これは何？</h2>
     <p>{{ config.name }} は、指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開くためのウェブアプリです。</p>
