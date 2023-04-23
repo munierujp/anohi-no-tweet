@@ -7,19 +7,16 @@ const config = useAppConfig()
     id="footer"
     height="auto"
   >
-    <el-row>
-      <el-col>
-        <small>{{ config.name }} v{{ config.version }}</small>
-      </el-col>
-      <el-col>
-        <small>© Munieru</small>
-      </el-col>
-    </el-row>
+    <span>{{ config.name }} v{{ config.version }}</span>
+    <span>© Munieru</span>
   </el-footer>
 </template>
 
 <style lang="scss" scoped>
 #footer {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  font-size: small;
 }
 </style>
