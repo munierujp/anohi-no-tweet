@@ -37,5 +37,6 @@ const showDialog = computed<boolean>({
 .app-dialog {
   width: calc(100vw - 8px * 2);
   max-width: 600px;
+  word-break: break-word
 }
 </style>
