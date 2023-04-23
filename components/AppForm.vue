@@ -30,6 +30,13 @@ const handleEnter = (event: KeyboardEvent | Event) => {
     openTwitter()
   }
 }
+const openTwilogDate = () => {
+  const url = createTwilogDateURL({
+    user: form.user,
+    date: parseISO(form.date)
+  })
+  window.open(url)
+}
 </script>
 
 <template>
@@ -97,7 +104,14 @@ const handleEnter = (event: KeyboardEvent | Event) => {
         検索
       </el-button>
     </el-form-item>
-    <AppFormTwilogDate />
+    <el-form-item>
+      <el-button
+        :circle="false"
+        @click="openTwilogDate"
+      >
+        Twilog（日付）
+      </el-button>
+    </el-form-item>
     <AppFormTwilogSearch />
     <AppFormTwisaveDate />
     <AppFormTwisaveSearch />
