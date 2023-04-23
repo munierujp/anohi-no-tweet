@@ -130,7 +130,7 @@ const openTwisaveSearch = () => {
         :circle="false"
         @click="openTwilogDate"
       >
-        Twilog（日付）
+        Twilog（日別）
       </el-button>
     </el-form-item>
     <el-form-item>
@@ -146,7 +146,7 @@ const openTwisaveSearch = () => {
         :circle="false"
         @click="openTwisaveDate"
       >
-        ツイセーブ（日付）
+        ツイセーブ（日別）
       </el-button>
     </el-form-item>
     <el-form-item>

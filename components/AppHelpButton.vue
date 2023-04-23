@@ -28,7 +28,7 @@ const closeDialog = () => {
     <p>Twilogの検索結果を開くには、「Twilog（検索）」ボタンをクリック（タップ）します。</p>
     <h2>Twilogの日別ページを開く</h2>
     <p>
-      Twilogの日別ページを開くには、「Twilog（日付）」ボタンをクリック（タップ）します。なお、<a
+      Twilogの日別ページを開くには、「Twilog（日別）」ボタンをクリック（タップ）します。なお、<a
         href="https://twitter.com/ropross/status/1643572802224783361"
         target="_blank"
       >Twilogは2023年4月5日以降ツイートの取得を停止しています。</a>
@@ -39,7 +39,7 @@ const closeDialog = () => {
     </p>
     <h2>ツイセーブの日別ページを開く</h2>
     <p>
-      ツイセーブの日別ページを開くには、「ツイセーブ（日付）」ボタンをクリック（タップ）します。なお、<a
+      ツイセーブの日別ページを開くには、「ツイセーブ（日別）」ボタンをクリック（タップ）します。なお、<a
         href="https://twisave.com/info/elonmusk"
         target="_blank"
       >ツイセーブは2023年4月4日以降ツイートの取得を停止しています。</a>
