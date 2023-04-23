@@ -8,8 +8,12 @@ const config = useAppConfig()
     height="auto"
   >
     <el-row>
-      <el-col>{{ config.name }} v{{ config.version }}</el-col>
-      <el-col>© Munieru</el-col>
+      <el-col>
+        <small>{{ config.name }} v{{ config.version }}</small>
+      </el-col>
+      <el-col>
+        <small>© Munieru</small>
+      </el-col>
     </el-row>
   </el-footer>
 </template>
@@ -17,6 +21,5 @@ const config = useAppConfig()
 <style lang="scss" scoped>
 #footer {
   text-align: center;
-  font-size: small;
 }
 </style>
