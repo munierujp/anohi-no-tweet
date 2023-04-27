@@ -167,4 +167,5 @@ const openTwisaveSearch = () => {
   <p>form.user: {{ form.user }}</p>
   <p>form.keyword: {{ form.keyword }}</p>
   <p>form.date: {{ form.date }}</p>
+  <p>enabledSearch: {{ enabledSearch }}</p>
 </template>
