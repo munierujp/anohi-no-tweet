@@ -144,6 +144,15 @@ const openTwisaveSearch = () => {
       </el-button>
     </el-form-item>
     <el-form-item>
+      <button
+        type="button"
+        :disabled="!enabledSearch"
+        @click="openTwitter"
+      >
+        検索
+      </button>
+    </el-form-item>
+    <el-form-item>
       <el-button
         :circle="false"
         :disabled="!user"
