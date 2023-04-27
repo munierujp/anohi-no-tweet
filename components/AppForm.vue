@@ -6,6 +6,7 @@ import {
 } from 'date-fns'
 
 const form = useFormStore()
+const enabledSearch = computed(() => form.user !== '' || form.keyword !== '')
 const now = new Date()
 const setToToday = () => {
   form.date = formatISODate(now)
@@ -26,7 +27,7 @@ const openTwitter = () => {
   window.open(url)
 }
 const handleEnter = (event: KeyboardEvent | Event) => {
-  if (event instanceof KeyboardEvent && event.keyCode === 13) {
+  if (enabledSearch.value && event instanceof KeyboardEvent && event.keyCode === 13) {
     openTwitter()
   }
 }
@@ -120,7 +121,7 @@ const openTwisaveSearch = () => {
       <el-button
         type="primary"
         :circle="false"
-        :disabled="!form.user && !form.keyword"
+        :disabled="!enabledSearch"
         @click="openTwitter"
       >
         検索
