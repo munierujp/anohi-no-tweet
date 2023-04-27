@@ -7,24 +7,22 @@ import {
 
 const form = useFormStore()
 const user = ref(form.user)
-const keyword = ref(form.keyword)
-const date = ref(form.date)
-const includesRetweets = ref(form.includesRetweets)
-const enabledSearch = ref(user.value !== '' || keyword.value !== '')
 watch(user, (user) => {
   form.user = user
-  enabledSearch.value = user !== '' || keyword.value !== ''
 })
+const keyword = ref(form.keyword)
 watch(keyword, (keyword) => {
   form.keyword = keyword
-  enabledSearch.value = user.value !== '' || keyword !== ''
 })
+const date = ref(form.date)
 watch(date, (date) => {
   form.date = date
 })
+const includesRetweets = ref(form.includesRetweets)
 watch(includesRetweets, (includesRetweets) => {
   form.includesRetweets = includesRetweets
 })
+const enabledSearch = computed(() => user.value !== '' || keyword.value !== '')
 const now = new Date()
 const setToToday = () => {
   date.value = formatISODate(now)
@@ -188,5 +186,7 @@ const openTwisaveSearch = () => {
   <p>keyword: {{ keyword }}</p>
   <p>form.date: {{ form.date }}</p>
   <p>date: {{ date }}</p>
+  <p>form.includesRetweets: {{ form.includesRetweets }}</p>
+  <p>includesRetweets: {{ includesRetweets }}</p>
   <p>enabledSearch: {{ enabledSearch }}</p>
 </template>
