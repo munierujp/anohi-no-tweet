@@ -130,7 +130,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
-        :disabled="!form.user || !form.keyword"
+        :disabled="!form.user"
         @click="openTwilogSearch"
       >
         Twilog（検索）
@@ -148,7 +148,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
-        :disabled="!form.user || !form.keyword"
+        :disabled="!form.user"
         @click="openTwisaveSearch"
       >
         ツイセーブ（検索）
