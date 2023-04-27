@@ -10,7 +10,7 @@ const user = ref(form.user)
 const keyword = ref(form.keyword)
 const date = ref(form.date)
 const includesRetweets = ref(form.includesRetweets)
-const enabledSearch = ref(false)
+const enabledSearch = ref(user.value !== '' || keyword.value !== '')
 watch(user, (user) => {
   form.user = user
   enabledSearch.value = user !== '' || keyword.value !== ''
