@@ -44,8 +44,7 @@ const config = {
 type Config = typeof config
 
 declare module '@nuxt/schema' {
-  interface AppConfigInput extends Config {
-  }
+  interface AppConfigInput extends Config {}
 }
 
 export default defineAppConfig(config)
