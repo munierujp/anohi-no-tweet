@@ -4,15 +4,6 @@ import {
 } from './package.json'
 import type { Theme } from './types/Theme'
 
-declare module '@nuxt/schema' {
-  interface AppConfigInput {
-    description: string
-    name: string
-    themes: Theme[]
-    version: string
-  }
-}
-
 const themes: Theme[] = [
   {
     name: 'ホワイト',
@@ -43,9 +34,18 @@ const themes: Theme[] = [
   }
 ]
 
-export default defineAppConfig({
+const config = {
   description,
   name: '#あの日のツイートを表示するやつ',
   themes,
   version
-})
+} as const
+
+type Config = typeof config
+
+declare module '@nuxt/schema' {
+  interface AppConfigInput extends Config {
+  }
+}
+
+export default defineAppConfig(config)
