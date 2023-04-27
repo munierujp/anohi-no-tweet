@@ -164,4 +164,7 @@ const openTwisaveSearch = () => {
       </el-button>
     </el-form-item>
   </el-form>
+  <p>form.user: {{ form.user }}</p>
+  <p>form.keyword: {{ form.keyword }}</p>
+  <p>form.date: {{ form.date }}</p>
 </template>
