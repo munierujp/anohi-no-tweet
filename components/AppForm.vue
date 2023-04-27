@@ -6,23 +6,41 @@ import {
 } from 'date-fns'
 
 const form = useFormStore()
-const enabledSearch = computed(() => form.user !== '' || form.keyword !== '')
+const user = ref(form.user)
+const keyword = ref(form.keyword)
+const date = ref(form.date)
+const includesRetweets = ref(form.includesRetweets)
+const enabledSearch = ref(false)
+watch(user, (user) => {
+  form.user = user
+  enabledSearch.value = user !== '' || keyword.value !== ''
+})
+watch(keyword, (keyword) => {
+  form.keyword = keyword
+  enabledSearch.value = user.value !== '' || keyword !== ''
+})
+watch(date, (date) => {
+  form.date = date
+})
+watch(includesRetweets, (includesRetweets) => {
+  form.includesRetweets = includesRetweets
+})
 const now = new Date()
 const setToToday = () => {
-  form.date = formatISODate(now)
+  date.value = formatISODate(now)
 }
 const setToYesterday = () => {
-  form.date = formatISODate(subDays(now, 1))
+  date.value = formatISODate(subDays(now, 1))
 }
 const setToOneYearAgo = () => {
-  form.date = formatISODate(subYears(now, 1))
+  date.value = formatISODate(subYears(now, 1))
 }
 const openTwitter = () => {
   const url = createTwitterSearchURL({
-    user: form.user,
-    date: parseISO(form.date),
-    keyword: form.keyword,
-    includesRetweets: form.includesRetweets
+    user: user.value,
+    date: parseISO(date.value),
+    keyword: keyword.value,
+    includesRetweets: includesRetweets.value
   })
   window.open(url)
 }
@@ -33,29 +51,29 @@ const handleEnter = (event: KeyboardEvent | Event) => {
 }
 const openTwilogDate = () => {
   const url = createTwilogDateURL({
-    user: form.user,
-    date: parseISO(form.date)
+    user: user.value,
+    date: parseISO(date.value)
   })
   window.open(url)
 }
 const openTwilogSearch = () => {
   const url = createTwilogKeywordSearchURL({
-    user: form.user,
-    keyword: form.keyword
+    user: user.value,
+    keyword: keyword.value
   })
   window.open(url)
 }
 const openTwisaveDate = () => {
   const url = createTwisaveDateURL({
-    user: form.user,
-    date: parseISO(form.date)
+    user: user.value,
+    date: parseISO(date.value)
   })
   window.open(url)
 }
 const openTwisaveSearch = () => {
   const url = createTwisaveKeywordSearchURL({
-    user: form.user,
-    keyword: form.keyword
+    user: user.value,
+    keyword: keyword.value
   })
   window.open(url)
 }
@@ -65,7 +83,7 @@ const openTwisaveSearch = () => {
   <el-form label-position="top">
     <el-form-item label="ユーザー">
       <el-input
-        v-model="form.user"
+        v-model="user"
         placeholder="munieru_jp"
         clearable
         autofocus
@@ -74,7 +92,7 @@ const openTwisaveSearch = () => {
     </el-form-item>
     <el-form-item label="日付">
       <el-date-picker
-        v-model="form.date"
+        v-model="date"
         type="date"
         value-format="YYYY-MM-DD"
         clearable
@@ -106,14 +124,14 @@ const openTwisaveSearch = () => {
     </el-form-item>
     <el-form-item label="キーワード">
       <el-input
-        v-model="form.keyword"
+        v-model="keyword"
         clearable
         @keydown.enter="handleEnter"
       />
     </el-form-item>
     <el-form-item>
       <el-checkbox
-        v-model="form.includesRetweets"
+        v-model="includesRetweets"
         label="リツイートを含む"
       />
     </el-form-item>
@@ -130,7 +148,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
-        :disabled="!form.user"
+        :disabled="!user"
         @click="openTwilogSearch"
       >
         Twilog（検索）
@@ -139,7 +157,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
-        :disabled="!form.user || !form.date"
+        :disabled="!user || !date"
         @click="openTwilogDate"
       >
         Twilog（日別）
@@ -148,7 +166,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
-        :disabled="!form.user"
+        :disabled="!user"
         @click="openTwisaveSearch"
       >
         ツイセーブ（検索）
@@ -157,7 +175,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
-        :disabled="!form.user || !form.date"
+        :disabled="!user || !date"
         @click="openTwisaveDate"
       >
         ツイセーブ（日別）
@@ -165,7 +183,10 @@ const openTwisaveSearch = () => {
     </el-form-item>
   </el-form>
   <p>form.user: {{ form.user }}</p>
+  <p>user: {{ user }}</p>
   <p>form.keyword: {{ form.keyword }}</p>
+  <p>keyword: {{ keyword }}</p>
   <p>form.date: {{ form.date }}</p>
+  <p>date: {{ date }}</p>
   <p>enabledSearch: {{ enabledSearch }}</p>
 </template>
