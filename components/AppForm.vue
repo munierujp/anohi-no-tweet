@@ -120,6 +120,7 @@ const openTwisaveSearch = () => {
       <el-button
         type="primary"
         :circle="false"
+        :disabled="!form.user && !form.keyword"
         @click="openTwitter"
       >
         検索
@@ -128,6 +129,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
+        :disabled="!form.user || !form.keyword"
         @click="openTwilogSearch"
       >
         Twilog（検索）
@@ -136,6 +138,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
+        :disabled="!form.user || !form.date"
         @click="openTwilogDate"
       >
         Twilog（日別）
@@ -144,6 +147,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
+        :disabled="!form.user || !form.keyword"
         @click="openTwisaveSearch"
       >
         ツイセーブ（検索）
@@ -152,6 +156,7 @@ const openTwisaveSearch = () => {
     <el-form-item>
       <el-button
         :circle="false"
+        :disabled="!form.user || !form.date"
         @click="openTwisaveDate"
       >
         ツイセーブ（日別）
