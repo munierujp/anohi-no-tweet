@@ -83,8 +83,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@element-plus/nuxt',
-    'nuxt-icon',
-    '@vueuse/nuxt'
+    'nuxt-icon'
   ],
   plugins: [
     // TODO: https://github.com/prazdevs/pinia-plugin-persistedstate/issues/191 が解決されたらpinia-plugin-persistedstateに移行
