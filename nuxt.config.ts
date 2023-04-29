@@ -86,6 +86,10 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@vueuse/nuxt'
   ],
+  plugins: [
+    // TODO: https://github.com/prazdevs/pinia-plugin-persistedstate/issues/191 が解決されたらpinia-plugin-persistedstateに移行
+    '~/plugins/persistedstate.ts'
+  ],
   typescript: {
     strict: true
   },
