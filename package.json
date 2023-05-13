@@ -15,7 +15,7 @@
     "test": "nuxt test"
   },
   "devDependencies": {
-    "@element-plus/nuxt": "1.0.4",
+    "@element-plus/nuxt": "1.0.5",
     "@markuplint/vue-parser": "3.7.0",
     "@markuplint/vue-spec": "3.8.0",
     "@mdi/font": "7.2.96",
