@@ -1,13 +1,7 @@
-// @ts-check
+import type { Config } from '@markuplint/ml-config'
 
-// eslint-disable-next-line jsdoc/valid-types -- https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html
-/** @typedef {import('@markuplint/ml-config').Config} Config */
-
-/**
- * @type {Config}
- * @see https://markuplint.dev/docs/configuration
- */
-const config = {
+// https://markuplint.dev/docs/configuration
+const config: Config = {
   extends: [
     'markuplint:recommended'
   ],
@@ -52,4 +46,4 @@ const config = {
   ]
 }
 
-module.exports = config
+export default config
