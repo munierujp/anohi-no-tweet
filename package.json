@@ -32,7 +32,7 @@
     "markuplint": "3.10.0",
     "npm-run-all2": "6.0.5",
     "nuxt": "3.4.3",
-    "nuxt-icon": "0.4.0",
+    "nuxt-icon": "0.4.1",
     "pinia": "2.0.35",
     "sass": "1.62.1",
     "vitest": "0.30.1"
