@@ -6,12 +6,12 @@ export const createTwilogKeywordSearchURL = ({
   keyword: string
 }): string => {
   if (user === '') {
-    return 'https://twilog.org/'
+    return 'https://twilog.togetter.com/'
   }
 
   if (keyword === '') {
-    return `https://twilog.org/${user}/`
+    return `https://twilog.togetter.com/${user}/`
   }
 
-  return `https://twilog.org/${user}/search?word=${keyword}`
+  return `https://twilog.togetter.com/${user}/search?word=${keyword}`
 }

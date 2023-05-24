@@ -15,17 +15,17 @@ describe('createTwilogKeywordSearchURL', () => {
       {
         user: '',
         keyword: '',
-        expected: 'https://twilog.org/'
+        expected: 'https://twilog.togetter.com/'
       },
       {
         user: 'munieru_jp',
         keyword: '',
-        expected: 'https://twilog.org/munieru_jp/'
+        expected: 'https://twilog.togetter.com/munieru_jp/'
       },
       {
         user: 'munieru_jp',
         keyword: 'hello',
-        expected: 'https://twilog.org/munieru_jp/search?word=hello'
+        expected: 'https://twilog.togetter.com/munieru_jp/search?word=hello'
       }
     ])('user=$user, keyword=$keyword', ({
       user,
