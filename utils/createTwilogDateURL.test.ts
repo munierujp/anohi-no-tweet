@@ -15,17 +15,17 @@ describe('createTwilogDateURL', () => {
       {
         user: '',
         date: new Date(''),
-        expected: 'https://twilog.org/'
+        expected: 'https://twilog.togetter.com/'
       },
       {
         user: 'munieru_jp',
         date: new Date(''),
-        expected: 'https://twilog.org/munieru_jp/'
+        expected: 'https://twilog.togetter.com/munieru_jp/'
       },
       {
         user: 'munieru_jp',
         date: new Date('2023-04-13'),
-        expected: 'https://twilog.org/munieru_jp/date-230413'
+        expected: 'https://twilog.togetter.com/munieru_jp/date-230413'
       }
     ])('user=$user, date=$date', ({
       user,
