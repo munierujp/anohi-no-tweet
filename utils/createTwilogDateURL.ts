@@ -11,13 +11,13 @@ export const createTwilogDateURL = ({
   date: Date
 }): string => {
   if (user === '') {
-    return 'https://twilog.org/'
+    return 'https://twilog.togetter.com/'
   }
 
   if (!isValid(date)) {
-    return `https://twilog.org/${user}/`
+    return `https://twilog.togetter.com/${user}/`
   }
 
   const dateString = format(date, 'yyMMdd')
-  return `https://twilog.org/${user}/date-${dateString}`
+  return `https://twilog.togetter.com/${user}/date-${dateString}`
 }

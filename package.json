@@ -1,6 +1,6 @@
 {
   "name": "anohi-no-tweet",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開くためのウェブアプリ",
   "private": true,
   "scripts": {
@@ -16,26 +16,26 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "1.0.5",
-    "@markuplint/vue-parser": "3.7.0",
-    "@markuplint/vue-spec": "3.8.0",
+    "@markuplint/vue-parser": "3.9.0",
+    "@markuplint/vue-spec": "3.10.0",
     "@mdi/font": "7.2.96",
-    "@munierujp/eslint-config-typescript": "24.0.0",
+    "@munierujp/eslint-config-typescript": "27.0.0",
     "@nuxt/eslint-config": "0.1.1",
-    "@nuxt/test-utils": "3.4.3",
+    "@nuxt/test-utils": "3.6.3",
     "@nuxtjs/eslint-module": "4.1.0",
     "@pinia-plugin-persistedstate/nuxt": "1.1.1",
     "@pinia/nuxt": "0.4.11",
     "@types/node": "18.14.6",
-    "@vite-pwa/nuxt": "0.0.8",
+    "@vite-pwa/nuxt": "0.1.0",
     "date-fns": "2.30.0",
-    "eslint": "8.40.0",
-    "markuplint": "3.10.0",
-    "npm-run-all2": "6.0.5",
+    "eslint": "8.45.0",
+    "markuplint": "3.12.0",
+    "npm-run-all2": "6.0.6",
     "nuxt": "3.4.3",
-    "nuxt-icon": "0.4.0",
+    "nuxt-icon": "0.4.2",
     "pinia": "2.0.35",
     "pinia-plugin-persistedstate-2": "2.0.14",
-    "sass": "1.62.1",
-    "vitest": "0.30.1"
+    "sass": "1.63.6",
+    "vitest": "0.32.4"
   }
 }
