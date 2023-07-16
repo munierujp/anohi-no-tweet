@@ -6,6 +6,5 @@ export const useFormStore = defineStore('form', {
     includesRetweets: true,
     keyword: '',
     user: ''
-  }),
-  persist: true
+  })
 })
