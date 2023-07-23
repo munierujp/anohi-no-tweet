@@ -1,6 +1,6 @@
 const APP_NAME = '#あの日のツイートを表示するやつ'
 const APP_NAME_SHORT = 'あの日のツイート'
-const APP_DESCRIPTION = '指定した条件にマッチするツイートの検索結果、Twilog、ツイセーブなどを開くためのウェブアプリ'
+const APP_DESCRIPTION = '指定した条件にマッチするツイートの検索結果、Twilogなどを開くためのウェブアプリ'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
