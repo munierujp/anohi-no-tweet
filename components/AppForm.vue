@@ -44,20 +44,6 @@ const openTwilogSearch = () => {
   })
   window.open(url)
 }
-const openTwisaveDate = () => {
-  const url = createTwisaveDateURL({
-    user: form.user,
-    date: parseISO(form.date)
-  })
-  window.open(url)
-}
-const openTwisaveSearch = () => {
-  const url = createTwisaveKeywordSearchURL({
-    user: form.user,
-    keyword: form.keyword
-  })
-  window.open(url)
-}
 </script>
 
 <template>
@@ -139,22 +125,6 @@ const openTwisaveSearch = () => {
         @click="openTwilogDate"
       >
         Twilog（日別）
-      </el-button>
-    </el-form-item>
-    <el-form-item>
-      <el-button
-        :circle="false"
-        @click="openTwisaveSearch"
-      >
-        ツイセーブ（検索）
-      </el-button>
-    </el-form-item>
-    <el-form-item>
-      <el-button
-        :circle="false"
-        @click="openTwisaveDate"
-      >
-        ツイセーブ（日別）
       </el-button>
     </el-form-item>
   </el-form>
