@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "1.0.6",
-    "@markuplint/vue-parser": "3.9.1",
+    "@markuplint/vue-parser": "3.10.0",
     "@markuplint/vue-spec": "3.10.1",
     "@mdi/font": "7.2.96",
     "@munierujp/eslint-config-typescript": "29.0.0",
