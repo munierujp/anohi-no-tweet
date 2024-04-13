@@ -1,6 +1,6 @@
 {
   "name": "anohi-no-tweet",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "指定した条件にマッチするツイートの検索結果、Twilogなどを開くためのウェブアプリ",
   "private": true,
   "scripts": {
