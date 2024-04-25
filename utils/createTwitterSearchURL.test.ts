@@ -7,7 +7,6 @@ import { createTwitterSearchURL } from './createTwitterSearchURL'
 
 describe('createTwitterSearchURL', () => {
   describe('returns the URL of the Twitter', () => {
-    /* eslint-disable sonarjs/no-duplicate-string */
     it.each<{
       user: string
       date: Date
@@ -65,6 +64,5 @@ describe('createTwitterSearchURL', () => {
       })
       expect(actual).toBe(expected)
     })
-    /* eslint-enable sonarjs/no-duplicate-string */
   })
 })
