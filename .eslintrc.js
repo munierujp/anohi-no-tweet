@@ -1,6 +1,5 @@
 // @ts-check
 
-// eslint-disable-next-line jsdoc/valid-types -- https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html
 /** @typedef {import('eslint').ESLint.ConfigData} ConfigData */
 
 /**
@@ -9,7 +8,6 @@
  */
 const config = {
   extends: [
-    '@munierujp/eslint-config-typescript',
     '@nuxt/eslint-config'
   ],
   parserOptions: {
@@ -17,5 +15,4 @@ const config = {
   }
 }
 
-// eslint-disable-next-line unicorn/prefer-module
 module.exports = config
