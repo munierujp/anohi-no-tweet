@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "lint": "npm-run-all -p lint:*",
     "lint:html": "markuplint --config markuplint.config.ts \"**/*.{html,vue}\"",
-    "lint:js": "eslint .",
+    "lint:js": "eslint --ignore-path .gitignore .",
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "test": "nuxt test"
