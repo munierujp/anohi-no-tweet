@@ -20,7 +20,7 @@
   "devDependencies": {
     "@element-plus/nuxt": "1.0.7",
     "@markuplint/vue-parser": "4.6.7",
-    "@markuplint/vue-spec": "4.5.5",
+    "@markuplint/vue-spec": "4.5.7",
     "@mdi/font": "7.4.47",
     "@nuxt/eslint-config": "0.3.13",
     "@nuxt/test-utils": "3.6.5",
