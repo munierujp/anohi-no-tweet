@@ -30,7 +30,7 @@
     "@types/node": "20.12.14",
     "@vite-pwa/nuxt": "0.7.0",
     "date-fns": "3.6.0",
-    "eslint": "8.57.1",
+    "eslint": "9.16.0",
     "markuplint": "4.8.1",
     "npm-run-all2": "6.1.2",
     "nuxt": "3.11.2",
