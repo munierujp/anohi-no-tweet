@@ -3,10 +3,10 @@ import {
   expect,
   it
 } from 'vitest'
-import { createTwitterSearchURL } from './createTwitterSearchURL'
+import { createSearchUrl } from './createSearchUrl'
 
-describe('createTwitterSearchURL', () => {
-  describe('returns the URL of the Twitter', () => {
+describe('createSearchUrl', () => {
+  describe('returns the URL', () => {
     it.each<{
       user: string
       date: Date
@@ -56,7 +56,7 @@ describe('createTwitterSearchURL', () => {
       includesRetweets,
       expected
     }) => {
-      const actual = createTwitterSearchURL({
+      const actual = createSearchUrl({
         user,
         date,
         keyword,

@@ -5,7 +5,7 @@
   >
     <AppHelpButton />
     <AppThemeButton />
-    <AppTwitterButton />
+    <AppXButton />
     <AppGitHubButton />
   </el-header>
 </template>

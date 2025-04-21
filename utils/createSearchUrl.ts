@@ -3,7 +3,7 @@ import {
   isValid
 } from 'date-fns'
 
-export const createTwitterSearchURL = ({
+export const createSearchUrl = ({
   user,
   date,
   keyword,
