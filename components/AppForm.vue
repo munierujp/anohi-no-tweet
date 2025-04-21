@@ -19,7 +19,7 @@ const setToOneYearAgo = () => {
 const openTwitter = () => {
   const url = createTwitterSearchURL({
     user: form.user,
-    date: parseISO(form.date),
+    date: form.date ? parseISO(form.date) : undefined,
     keyword: form.keyword,
     includesRetweets: form.includesRetweets
   })
