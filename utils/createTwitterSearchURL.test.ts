@@ -19,35 +19,35 @@ describe('createTwitterSearchURL', () => {
         date: new Date(''),
         keyword: '',
         includesRetweets: false,
-        expected: 'https://twitter.com/search?f=live'
+        expected: 'https://x.com/search?f=live'
       },
       {
         user: 'munieru_jp',
         date: new Date(''),
         keyword: '',
         includesRetweets: false,
-        expected: 'https://twitter.com/search?f=live&q=from%3Amunieru_jp'
+        expected: 'https://x.com/search?f=live&q=from%3Amunieru_jp'
       },
       {
         user: 'munieru_jp',
         date: new Date('2023-04-15'),
         keyword: '',
         includesRetweets: false,
-        expected: 'https://twitter.com/search?f=live&q=from%3Amunieru_jp+since%3A2023-04-15_00%3A00%3A00_JST+until%3A2023-04-15_23%3A59%3A59_JST'
+        expected: 'https://x.com/search?f=live&q=from%3Amunieru_jp+since%3A2023-04-15_00%3A00%3A00_JST+until%3A2023-04-15_23%3A59%3A59_JST'
       },
       {
         user: 'munieru_jp',
         date: new Date('2023-04-15'),
         keyword: 'hello',
         includesRetweets: false,
-        expected: 'https://twitter.com/search?f=live&q=hello+from%3Amunieru_jp+since%3A2023-04-15_00%3A00%3A00_JST+until%3A2023-04-15_23%3A59%3A59_JST'
+        expected: 'https://x.com/search?f=live&q=hello+from%3Amunieru_jp+since%3A2023-04-15_00%3A00%3A00_JST+until%3A2023-04-15_23%3A59%3A59_JST'
       },
       {
         user: 'munieru_jp',
         date: new Date('2023-04-15'),
         keyword: 'hello',
         includesRetweets: true,
-        expected: 'https://twitter.com/search?f=live&q=hello+from%3Amunieru_jp+since%3A2023-04-15_00%3A00%3A00_JST+until%3A2023-04-15_23%3A59%3A59_JST+include%3Anativeretweets'
+        expected: 'https://x.com/search?f=live&q=hello+from%3Amunieru_jp+since%3A2023-04-15_00%3A00%3A00_JST+until%3A2023-04-15_23%3A59%3A59_JST+include%3Anativeretweets'
       }
     ])('user=$user, date=$date, keyword=$keyword, includesRetweets=$includesRetweets', ({
       user,

@@ -44,5 +44,5 @@ export const createTwitterSearchURL = ({
     params.set('q', queries.join(' '))
   }
 
-  return `https://twitter.com/search?${params.toString()}`
+  return `https://x.com/search?${params.toString()}`
 }
