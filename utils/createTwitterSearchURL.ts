@@ -9,22 +9,22 @@ export const createTwitterSearchURL = ({
   keyword,
   includesRetweets
 }: {
-  user: string
-  date: Date
-  keyword: string
-  includesRetweets: boolean
+  user: string | undefined
+  date: Date | undefined
+  keyword: string | undefined
+  includesRetweets: boolean | undefined
 }): string => {
   const queries: string[] = []
 
-  if (keyword !== '') {
+  if (keyword) {
     queries.push(keyword)
   }
 
-  if (user !== '') {
+  if (user) {
     queries.push(`from:${user}`)
   }
 
-  if (isValid(date)) {
+  if (date && isValid(date)) {
     const dateString = format(date, 'yyyy-MM-dd')
     queries.push(
       `since:${dateString}_00:00:00_JST`,
