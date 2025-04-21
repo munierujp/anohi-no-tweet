@@ -16,8 +16,8 @@ const setToYesterday = () => {
 const setToOneYearAgo = () => {
   form.date = formatISODate(subYears(now, 1))
 }
-const openTwitter = () => {
-  const url = createTwitterSearchURL({
+const openX = () => {
+  const url = createSearchUrl({
     user: form.user,
     date: form.date ? parseISO(form.date) : undefined,
     keyword: form.keyword,
@@ -27,7 +27,7 @@ const openTwitter = () => {
 }
 const handleEnter = (event: KeyboardEvent | Event) => {
   if (event instanceof KeyboardEvent && event.keyCode === 13) {
-    openTwitter()
+    openX()
   }
 }
 const openTwilogDate = () => {
@@ -106,7 +106,7 @@ const openTwilogSearch = () => {
       <el-button
         type="primary"
         :circle="false"
-        @click="openTwitter"
+        @click="openX"
       >
         検索
       </el-button>
