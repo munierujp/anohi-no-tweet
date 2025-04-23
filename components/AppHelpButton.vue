@@ -18,7 +18,6 @@ const closeDialog = () => {
   <AppDialog
     v-model="showDialog"
     title="ヘルプ"
-    fullscreen
   >
     <h2>これは何？</h2>
     <p>{{ config.name }} は、{{ config.description }}です。ホーム画面に追加することで、ネイティブアプリのように使うことができます。</p>
