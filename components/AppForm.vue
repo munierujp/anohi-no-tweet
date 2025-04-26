@@ -7,19 +7,29 @@ import {
 
 const form = useFormStore()
 const now = new Date()
-const setToToday = () => {
-  form.date = formatISODate(now)
+const setStartDateToToday = () => {
+  form.startDate = formatISODate(now)
 }
-const setToYesterday = () => {
-  form.date = formatISODate(subDays(now, 1))
+const setStartDateToYesterday = () => {
+  form.startDate = formatISODate(subDays(now, 1))
 }
-const setToOneYearAgo = () => {
-  form.date = formatISODate(subYears(now, 1))
+const setStartDateToOneYearAgo = () => {
+  form.startDate = formatISODate(subYears(now, 1))
+}
+const setEndDateToToday = () => {
+  form.endDate = formatISODate(now)
+}
+const setEndDateToYesterday = () => {
+  form.endDate = formatISODate(subDays(now, 1))
+}
+const setEndDateToOneYearAgo = () => {
+  form.endDate = formatISODate(subYears(now, 1))
 }
 const openX = () => {
   const url = createSearchUrl({
     user: form.user,
-    date: form.date ? parseISO(form.date) : undefined,
+    startDate: form.startDate ? parseISO(form.startDate) : undefined,
+    endDate: form.endDate ? parseISO(form.endDate) : undefined,
     keyword: form.keyword,
     includesRetweets: form.includesRetweets
   })
@@ -33,7 +43,7 @@ const handleEnter = (event: KeyboardEvent | Event) => {
 const openTwilogDate = () => {
   const url = createTwilogDateURL({
     user: form.user,
-    date: parseISO(form.date)
+    date: parseISO(form.startDate)
   })
   window.open(url)
 }
@@ -57,9 +67,9 @@ const openTwilogSearch = () => {
         @keydown.enter="handleEnter"
       />
     </el-form-item>
-    <el-form-item label="日付">
+    <el-form-item label="開始日">
       <el-date-picker
-        v-model="form.date"
+        v-model="form.startDate"
         type="date"
         value-format="YYYY-MM-DD"
         clearable
@@ -70,21 +80,53 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
-        @click="setToToday"
+        @click="setStartDateToToday"
       >
         今日
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setToYesterday"
+        @click="setStartDateToYesterday"
       >
         昨日
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setToOneYearAgo"
+        @click="setStartDateToOneYearAgo"
+      >
+        1年前
+      </el-button>
+    </el-form-item>
+    <el-form-item label="終了日">
+      <el-date-picker
+        v-model="form.endDate"
+        type="date"
+        value-format="YYYY-MM-DD"
+        clearable
+        @keydown.enter="handleEnter"
+      />
+    </el-form-item>
+    <el-form-item>
+      <el-button
+        size="small"
+        :circle="false"
+        @click="setEndDateToToday"
+      >
+        今日
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        @click="setEndDateToYesterday"
+      >
+        昨日
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        @click="setEndDateToOneYearAgo"
       >
         1年前
       </el-button>

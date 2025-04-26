@@ -2,7 +2,8 @@ import { defineStore } from 'pinia'
 
 export const useFormStore = defineStore('form', {
   state: () => ({
-    date: '',
+    startDate: '',
+    endDate: '',
     includesRetweets: true,
     keyword: '',
     user: ''
