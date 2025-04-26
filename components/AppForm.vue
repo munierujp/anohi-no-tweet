@@ -2,6 +2,7 @@
 import {
   parseISO,
   subDays,
+  subWeeks,
   subYears
 } from 'date-fns'
 
@@ -13,6 +14,9 @@ const setStartDateToToday = () => {
 const setStartDateToYesterday = () => {
   form.startDate = formatISODate(subDays(now, 1))
 }
+const setStartDateToOneWeekAgo = () => {
+  form.startDate = formatISODate(subWeeks(now, 1))
+}
 const setStartDateToOneYearAgo = () => {
   form.startDate = formatISODate(subYears(now, 1))
 }
@@ -21,6 +25,9 @@ const setEndDateToToday = () => {
 }
 const setEndDateToYesterday = () => {
   form.endDate = formatISODate(subDays(now, 1))
+}
+const setEndDateToOneWeekAgo = () => {
+  form.endDate = formatISODate(subWeeks(now, 1))
 }
 const setEndDateToOneYearAgo = () => {
   form.endDate = formatISODate(subYears(now, 1))
@@ -94,6 +101,13 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
+        @click="setStartDateToOneWeekAgo"
+      >
+        1週間前
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
         @click="setStartDateToOneYearAgo"
       >
         1年前
@@ -122,6 +136,13 @@ const openTwilogSearch = () => {
         @click="setEndDateToYesterday"
       >
         昨日
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        @click="setEndDateToOneWeekAgo"
+      >
+        1週間前
       </el-button>
       <el-button
         size="small"
