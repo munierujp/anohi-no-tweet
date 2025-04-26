@@ -3,7 +3,7 @@
     id="header"
     height="auto"
   >
-    <AppHelpButton />
+    <AppAboutButton />
     <AppThemeButton />
     <AppXButton />
     <AppGitHubButton />
