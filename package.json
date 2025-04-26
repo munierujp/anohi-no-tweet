@@ -1,7 +1,7 @@
 {
   "name": "anohi-no-tweet",
   "version": "1.5.5",
-  "description": "指定した条件にマッチするツイートの検索結果、Twilogなどを開くためのウェブアプリ",
+  "description": "Xのツイート（ポスト）を指定した条件で検索するためのウェブアプリ",
   "private": true,
   "scripts": {
     "build": "nuxt build",
