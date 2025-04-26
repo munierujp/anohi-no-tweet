@@ -1,7 +1,7 @@
 {
   "name": "anohi-no-tweet",
   "version": "1.5.5",
-  "description": "Xのツイート（ポスト）を指定した条件で検索するためのウェブアプリ",
+  "description": "X（旧Twitter）のポスト（ツイート）を指定した条件で検索するためのウェブアプリ",
   "private": true,
   "scripts": {
     "build": "nuxt build",
