@@ -1,7 +1,8 @@
 import {
-  description,
-  version
-} from './package.json'
+  APP_DESCRIPTION,
+  APP_NAME
+} from './constants'
+import { version } from './package.json'
 import type { Theme } from './types/Theme'
 
 const themes: Theme[] = [
@@ -35,8 +36,8 @@ const themes: Theme[] = [
 ]
 
 const config = {
-  description,
-  name: '#あの日のツイートを表示するやつ',
+  description: APP_DESCRIPTION,
+  name: APP_NAME,
   themes,
   version
 } as const

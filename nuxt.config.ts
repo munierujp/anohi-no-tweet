@@ -1,6 +1,8 @@
-const APP_NAME = '#あの日のツイートを表示するやつ'
-const APP_NAME_SHORT = 'あの日のツイート'
-const APP_DESCRIPTION = '指定した条件にマッチするツイートの検索結果、Twilogなどを開くためのウェブアプリ'
+import {
+  APP_DESCRIPTION,
+  APP_NAME,
+  APP_NAME_SHORT
+} from "./constants"
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
