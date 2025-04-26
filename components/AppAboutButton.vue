@@ -1,11 +1,7 @@
 <script lang="ts" setup>
-const config = useAppConfig()
 const showDialog = ref(false)
 const openDialog = () => {
   showDialog.value = true
-}
-const closeDialog = () => {
-  showDialog.value = false
 }
 </script>
 
