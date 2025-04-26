@@ -7,7 +7,7 @@ const config = useAppConfig()
     id="footer"
     height="auto"
   >
-    <span>{{ config.name }} v{{ config.version }}</span>
+    <span>{{ config.appName }} v{{ config.appVersion }}</span>
     <span>© Munieru</span>
   </el-footer>
 </template>

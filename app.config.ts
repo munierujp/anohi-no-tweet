@@ -2,7 +2,7 @@ import {
   APP_DESCRIPTION,
   APP_NAME
 } from './constants'
-import { version } from './package.json'
+import pkg from './package.json'
 import type { Theme } from './types/Theme'
 
 const themes: Theme[] = [
@@ -36,10 +36,10 @@ const themes: Theme[] = [
 ]
 
 const config = {
-  description: APP_DESCRIPTION,
-  name: APP_NAME,
-  themes,
-  version
+  appDescription: APP_DESCRIPTION,
+  appName: APP_NAME,
+  appVersion: pkg.version,
+  themes
 } as const
 
 type Config = typeof config
