@@ -36,10 +36,10 @@ const themes: Theme[] = [
 ]
 
 const config = {
-  appDescription: APP_DESCRIPTION,
-  appName: APP_NAME,
-  appVersion: pkg.version,
-  themes
+  description: APP_DESCRIPTION,
+  name: APP_NAME,
+  themes,
+  version: pkg.version
 } as const
 
 type Config = typeof config

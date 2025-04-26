@@ -16,6 +16,6 @@ const openDialog = () => {
     v-model="showDialog"
     title="About"
   >
-    <p>{{ config.appName }} は、{{ config.appDescription }}です。ホーム画面に追加することで、ネイティブアプリのように使うことができます。</p>
+    <p>{{ config.name }} は、{{ config.description }}です。ホーム画面に追加することで、ネイティブアプリのように使うことができます。</p>
   </AppDialog>
 </template>
