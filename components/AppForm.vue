@@ -11,7 +11,7 @@ const form = useFormStore()
 const openX = () => {
   const startDate = form.startDate ? parseISO(form.startDate) : undefined
   const endDate = form.endDate ? parseISO(form.endDate) : undefined
-  const url = createSearchUrl({
+  const url = createUrl({
     user: form.user,
     startDate,
     endDate: form.syncDates ? startDate : endDate,
