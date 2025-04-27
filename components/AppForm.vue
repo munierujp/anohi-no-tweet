@@ -9,6 +9,7 @@ import {
 
 const form = useFormStore()
 const now = new Date()
+
 const setStartDateToToday = () => {
   form.startDate = formatISODate(now)
 }
@@ -43,7 +44,13 @@ const openX = () => {
   const url = createSearchUrl({
     user: form.user,
     startDate: form.startDate ? parseISO(form.startDate) : undefined,
-    endDate: form.endDate ? parseISO(form.endDate) : undefined,
+    endDate: form.syncDates
+      ? form.startDate
+        ? parseISO(form.startDate)
+        : undefined
+      : form.endDate
+      ? parseISO(form.endDate)
+      : undefined,
     keyword: form.keyword,
     includesRetweets: form.includesRetweets
   })
@@ -133,7 +140,14 @@ const openTwilogSearch = () => {
         type="date"
         value-format="YYYY-MM-DD"
         clearable
+        :disabled="form.syncDates"
         @keydown.enter="handleEnter"
+      />
+    </el-form-item>
+    <el-form-item>
+      <el-checkbox
+        v-model="form.syncDates"
+        label="開始日に合わせる"
       />
     </el-form-item>
     <el-form-item>
