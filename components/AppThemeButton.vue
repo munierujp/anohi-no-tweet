@@ -55,6 +55,15 @@ const closeDialog = () => {
         </el-radio>
       </template>
     </el-radio-group>
+    <template #footer>
+      <el-button
+        :circle="false"
+        type="primary"
+        @click="closeDialog"
+      >
+        OK
+      </el-button>
+    </template>
   </AppDialog>
 </template>
 
