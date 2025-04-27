@@ -2,44 +2,12 @@
 import {
   parseISO,
   subDays,
-  subWeeks,
   subMonths,
+  subWeeks,
   subYears
 } from 'date-fns'
 
 const form = useFormStore()
-const now = new Date()
-
-const setStartDateToToday = () => {
-  form.startDate = formatISODate(now)
-}
-const setStartDateToYesterday = () => {
-  form.startDate = formatISODate(subDays(now, 1))
-}
-const setStartDateToOneWeekAgo = () => {
-  form.startDate = formatISODate(subWeeks(now, 1))
-}
-const setStartDateToOneMonthAgo = () => {
-  form.startDate = formatISODate(subMonths(now, 1))
-}
-const setStartDateToOneYearAgo = () => {
-  form.startDate = formatISODate(subYears(now, 1))
-}
-const setEndDateToToday = () => {
-  form.endDate = formatISODate(now)
-}
-const setEndDateToYesterday = () => {
-  form.endDate = formatISODate(subDays(now, 1))
-}
-const setEndDateToOneWeekAgo = () => {
-  form.endDate = formatISODate(subWeeks(now, 1))
-}
-const setEndDateToOneMonthAgo = () => {
-  form.endDate = formatISODate(subMonths(now, 1))
-}
-const setEndDateToOneYearAgo = () => {
-  form.endDate = formatISODate(subYears(now, 1))
-}
 const openX = () => {
   const url = createSearchUrl({
     user: form.user,
@@ -101,35 +69,35 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
-        @click="setStartDateToToday"
+        @click="form.startDate = formatISODate(new Date())"
       >
         今日
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setStartDateToYesterday"
+        @click="form.startDate = formatISODate(subDays(new Date(), 1))"
       >
         昨日
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setStartDateToOneWeekAgo"
+        @click="form.startDate = formatISODate(subWeeks(new Date(), 1))"
       >
         1週間前
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setStartDateToOneMonthAgo"
+        @click="form.startDate = formatISODate(subMonths(new Date(), 1))"
       >
         1ヶ月前
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setStartDateToOneYearAgo"
+        @click="form.startDate = formatISODate(subYears(new Date(), 1))"
       >
         1年前
       </el-button>
@@ -155,7 +123,7 @@ const openTwilogSearch = () => {
         size="small"
         :circle="false"
         :disabled="form.syncDates"
-        @click="setEndDateToToday"
+        @click="form.endDate = formatISODate(new Date())"
       >
         今日
       </el-button>
@@ -163,7 +131,7 @@ const openTwilogSearch = () => {
         size="small"
         :circle="false"
         :disabled="form.syncDates"
-        @click="setEndDateToYesterday"
+        @click="form.endDate = formatISODate(subDays(new Date(), 1))"
       >
         昨日
       </el-button>
@@ -171,7 +139,7 @@ const openTwilogSearch = () => {
         size="small"
         :circle="false"
         :disabled="form.syncDates"
-        @click="setEndDateToOneWeekAgo"
+        @click="form.endDate = formatISODate(subWeeks(new Date(), 1))"
       >
         1週間前
       </el-button>
@@ -179,7 +147,7 @@ const openTwilogSearch = () => {
         size="small"
         :circle="false"
         :disabled="form.syncDates"
-        @click="setEndDateToOneMonthAgo"
+        @click="form.endDate = formatISODate(subMonths(new Date(), 1))"
       >
         1ヶ月前
       </el-button>
@@ -187,7 +155,7 @@ const openTwilogSearch = () => {
         size="small"
         :circle="false"
         :disabled="form.syncDates"
-        @click="setEndDateToOneYearAgo"
+        @click="form.endDate = formatISODate(subYears(new Date(), 1))"
       >
         1年前
       </el-button>
