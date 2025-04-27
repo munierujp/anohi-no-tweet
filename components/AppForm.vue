@@ -11,7 +11,7 @@ const form = useFormStore()
 const openX = () => {
   const startDate = form.startDate ? parseISO(form.startDate) : undefined
   const endDate = form.endDate ? parseISO(form.endDate) : undefined
-  const url = createSearchUrl({
+  const url = createUrl({
     user: form.user,
     startDate,
     endDate: form.syncDates ? startDate : endDate,
@@ -24,20 +24,6 @@ const handleEnter = (event: KeyboardEvent | Event) => {
   if (event instanceof KeyboardEvent && event.keyCode === 13) {
     openX()
   }
-}
-const openTwilogDate = () => {
-  const url = createTwilogDateURL({
-    user: form.user,
-    date: parseISO(form.startDate)
-  })
-  window.open(url)
-}
-const openTwilogSearch = () => {
-  const url = createTwilogKeywordSearchURL({
-    user: form.user,
-    keyword: form.keyword
-  })
-  window.open(url)
 }
 </script>
 
@@ -176,22 +162,6 @@ const openTwilogSearch = () => {
         @click="openX"
       >
         検索
-      </el-button>
-    </el-form-item>
-    <el-form-item>
-      <el-button
-        :circle="false"
-        @click="openTwilogSearch"
-      >
-        Twilog（検索）
-      </el-button>
-    </el-form-item>
-    <el-form-item>
-      <el-button
-        :circle="false"
-        @click="openTwilogDate"
-      >
-        Twilog（日別）
       </el-button>
     </el-form-item>
   </el-form>

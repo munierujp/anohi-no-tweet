@@ -3,9 +3,9 @@ import {
   expect,
   it
 } from 'vitest'
-import { createSearchUrl } from './createSearchUrl'
+import { createUrl } from './createUrl'
 
-describe('createSearchUrl', () => {
+describe('createUrl', () => {
   describe('returns the URL', () => {
     it.each`
       user            | startDate                 | endDate                   | keyword      | includesRetweets | expected
@@ -49,7 +49,7 @@ describe('createSearchUrl', () => {
       includesRetweets,
       expected
     }) => {
-      const actual = createSearchUrl({
+      const actual = createUrl({
         user,
         startDate,
         endDate,

@@ -3,7 +3,7 @@ import {
   isValid
 } from 'date-fns'
 
-export const createSearchUrl = ({
+export const createUrl = ({
   user,
   startDate,
   endDate,
