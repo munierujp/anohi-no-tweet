@@ -9,16 +9,12 @@ import {
 
 const form = useFormStore()
 const openX = () => {
+  const startDate = form.startDate ? parseISO(form.startDate) : undefined
+  const endDate = form.endDate ? parseISO(form.endDate) : undefined
   const url = createSearchUrl({
     user: form.user,
-    startDate: form.startDate ? parseISO(form.startDate) : undefined,
-    endDate: form.syncDates
-      ? form.startDate
-        ? parseISO(form.startDate)
-        : undefined
-      : form.endDate
-        ? parseISO(form.endDate)
-        : undefined,
+    startDate,
+    endDate: form.syncDates ? startDate : endDate,
     keyword: form.keyword,
     includesRetweets: form.includesRetweets
   })
