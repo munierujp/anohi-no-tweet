@@ -154,6 +154,7 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
+        :disabled="form.syncDates"
         @click="setEndDateToToday"
       >
         今日
@@ -161,6 +162,7 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
+        :disabled="form.syncDates"
         @click="setEndDateToYesterday"
       >
         昨日
@@ -168,6 +170,7 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
+        :disabled="form.syncDates"
         @click="setEndDateToOneWeekAgo"
       >
         1週間前
@@ -175,6 +178,7 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
+        :disabled="form.syncDates"
         @click="setEndDateToOneMonthAgo"
       >
         1ヶ月前
@@ -182,6 +186,7 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
+        :disabled="form.syncDates"
         @click="setEndDateToOneYearAgo"
       >
         1年前
