@@ -32,7 +32,7 @@
     "date-fns": "3.6.0",
     "eslint": "8.57.1",
     "markuplint": "4.8.1",
-    "npm-run-all2": "6.1.2",
+    "npm-run-all2": "7.0.2",
     "nuxt": "3.11.2",
     "nuxt-icon": "0.6.10",
     "pinia": "2.0.36",
