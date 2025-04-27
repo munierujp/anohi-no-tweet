@@ -25,20 +25,6 @@ const handleEnter = (event: KeyboardEvent | Event) => {
     openX()
   }
 }
-const openTwilogDate = () => {
-  const url = createTwilogDateURL({
-    user: form.user,
-    date: parseISO(form.startDate)
-  })
-  window.open(url)
-}
-const openTwilogSearch = () => {
-  const url = createTwilogKeywordSearchURL({
-    user: form.user,
-    keyword: form.keyword
-  })
-  window.open(url)
-}
 </script>
 
 <template>
@@ -176,22 +162,6 @@ const openTwilogSearch = () => {
         @click="openX"
       >
         検索
-      </el-button>
-    </el-form-item>
-    <el-form-item>
-      <el-button
-        :circle="false"
-        @click="openTwilogSearch"
-      >
-        Twilog（検索）
-      </el-button>
-    </el-form-item>
-    <el-form-item>
-      <el-button
-        :circle="false"
-        @click="openTwilogDate"
-      >
-        Twilog（日別）
       </el-button>
     </el-form-item>
   </el-form>
