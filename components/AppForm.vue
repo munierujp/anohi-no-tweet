@@ -2,24 +2,19 @@
 import {
   parseISO,
   subDays,
+  subMonths,
+  subWeeks,
   subYears
 } from 'date-fns'
 
 const form = useFormStore()
-const now = new Date()
-const setToToday = () => {
-  form.date = formatISODate(now)
-}
-const setToYesterday = () => {
-  form.date = formatISODate(subDays(now, 1))
-}
-const setToOneYearAgo = () => {
-  form.date = formatISODate(subYears(now, 1))
-}
 const openX = () => {
+  const startDate = form.startDate ? parseISO(form.startDate) : undefined
+  const endDate = form.endDate ? parseISO(form.endDate) : undefined
   const url = createSearchUrl({
     user: form.user,
-    date: form.date ? parseISO(form.date) : undefined,
+    startDate,
+    endDate: form.syncDates ? startDate : endDate,
     keyword: form.keyword,
     includesRetweets: form.includesRetweets
   })
@@ -33,7 +28,7 @@ const handleEnter = (event: KeyboardEvent | Event) => {
 const openTwilogDate = () => {
   const url = createTwilogDateURL({
     user: form.user,
-    date: parseISO(form.date)
+    date: parseISO(form.startDate)
   })
   window.open(url)
 }
@@ -57,9 +52,9 @@ const openTwilogSearch = () => {
         @keydown.enter="handleEnter"
       />
     </el-form-item>
-    <el-form-item label="日付">
+    <el-form-item label="開始日">
       <el-date-picker
-        v-model="form.date"
+        v-model="form.startDate"
         type="date"
         value-format="YYYY-MM-DD"
         clearable
@@ -70,21 +65,93 @@ const openTwilogSearch = () => {
       <el-button
         size="small"
         :circle="false"
-        @click="setToToday"
+        @click="form.startDate = formatISODate(new Date())"
       >
         今日
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setToYesterday"
+        @click="form.startDate = formatISODate(subDays(new Date(), 1))"
       >
         昨日
       </el-button>
       <el-button
         size="small"
         :circle="false"
-        @click="setToOneYearAgo"
+        @click="form.startDate = formatISODate(subWeeks(new Date(), 1))"
+      >
+        1週間前
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        @click="form.startDate = formatISODate(subMonths(new Date(), 1))"
+      >
+        1ヶ月前
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        @click="form.startDate = formatISODate(subYears(new Date(), 1))"
+      >
+        1年前
+      </el-button>
+    </el-form-item>
+    <el-form-item label="終了日">
+      <el-date-picker
+        v-model="form.endDate"
+        type="date"
+        value-format="YYYY-MM-DD"
+        clearable
+        :disabled="form.syncDates"
+        @keydown.enter="handleEnter"
+      />
+    </el-form-item>
+    <el-form-item>
+      <el-checkbox
+        v-model="form.syncDates"
+        label="開始日に合わせる"
+      />
+    </el-form-item>
+    <el-form-item>
+      <el-button
+        size="small"
+        :circle="false"
+        :disabled="form.syncDates"
+        @click="form.endDate = formatISODate(new Date())"
+      >
+        今日
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        :disabled="form.syncDates"
+        @click="form.endDate = formatISODate(subDays(new Date(), 1))"
+      >
+        昨日
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        :disabled="form.syncDates"
+        @click="form.endDate = formatISODate(subWeeks(new Date(), 1))"
+      >
+        1週間前
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        :disabled="form.syncDates"
+        @click="form.endDate = formatISODate(subMonths(new Date(), 1))"
+      >
+        1ヶ月前
+      </el-button>
+      <el-button
+        size="small"
+        :circle="false"
+        :disabled="form.syncDates"
+        @click="form.endDate = formatISODate(subYears(new Date(), 1))"
       >
         1年前
       </el-button>

@@ -5,12 +5,14 @@ import {
 
 export const createSearchUrl = ({
   user,
-  date,
+  startDate,
+  endDate,
   keyword,
   includesRetweets
 }: {
   user: string | undefined
-  date: Date | undefined
+  startDate: Date | undefined
+  endDate: Date | undefined
   keyword: string | undefined
   includesRetweets: boolean | undefined
 }): string => {
@@ -24,12 +26,14 @@ export const createSearchUrl = ({
     queries.push(`from:${user}`)
   }
 
-  if (date && isValid(date)) {
-    const dateString = format(date, 'yyyy-MM-dd')
-    queries.push(
-      `since:${dateString}_00:00:00_JST`,
-      `until:${dateString}_23:59:59_JST`
-    )
+  if (startDate && isValid(startDate)) {
+    const startDateString = format(startDate, 'yyyy-MM-dd')
+    queries.push(`since:${startDateString}_00:00:00_JST`)
+  }
+
+  if (endDate && isValid(endDate)) {
+    const endDateString = format(endDate, 'yyyy-MM-dd')
+    queries.push(`until:${endDateString}_23:59:59_JST`)
   }
 
   if (includesRetweets) {
