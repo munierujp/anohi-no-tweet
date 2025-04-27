@@ -4,7 +4,7 @@ export const useFormStore = defineStore('form', {
   state: () => ({
     startDate: '',
     endDate: '',
-    syncDates: true,
+    syncDates: false,
     includesRetweets: true,
     keyword: '',
     user: ''
