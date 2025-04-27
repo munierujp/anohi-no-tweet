@@ -17,8 +17,8 @@ const openX = () => {
         ? parseISO(form.startDate)
         : undefined
       : form.endDate
-      ? parseISO(form.endDate)
-      : undefined,
+        ? parseISO(form.endDate)
+        : undefined,
     keyword: form.keyword,
     includesRetweets: form.includesRetweets
   })
