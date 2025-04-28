@@ -21,9 +21,6 @@ const showDialog = ref(false)
 const openDialog = () => {
   showDialog.value = true
 }
-const closeDialog = () => {
-  showDialog.value = false
-}
 </script>
 
 <template>
