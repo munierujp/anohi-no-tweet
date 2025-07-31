@@ -33,7 +33,6 @@ const handleEnter = (event: KeyboardEvent | Event) => {
     <el-form-item label="ユーザー">
       <el-input
         v-model="form.user"
-        placeholder="munieru_jp"
         clearable
         autofocus
         @keydown.enter="handleEnter"
