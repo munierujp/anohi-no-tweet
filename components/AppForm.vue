@@ -152,7 +152,7 @@ const handleEnter = (event: KeyboardEvent | Event) => {
     <el-form-item>
       <el-checkbox
         v-model="form.includesRetweets"
-        label="リツイートを含む"
+        label="リポストを含む"
       />
     </el-form-item>
     <el-form-item>
