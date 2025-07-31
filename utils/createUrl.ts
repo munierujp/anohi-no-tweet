@@ -8,18 +8,24 @@ export const createUrl = ({
   startDate,
   endDate,
   keyword,
+  excludeKeyword,
   includesRetweets
 }: {
   user: string | undefined
   startDate: Date | undefined
   endDate: Date | undefined
   keyword: string | undefined
+  excludeKeyword: string | undefined
   includesRetweets: boolean | undefined
 }): string => {
   const queries: string[] = []
 
   if (keyword) {
     queries.push(keyword)
+  }
+
+  if (excludeKeyword) {
+    excludeKeyword.split(/\s+/).forEach(word => queries.push(`-${word}`))
   }
 
   if (user) {

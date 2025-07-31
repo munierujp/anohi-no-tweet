@@ -16,6 +16,7 @@ const openX = () => {
     startDate,
     endDate: form.syncDates ? startDate : endDate,
     keyword: form.keyword,
+    excludeKeyword: form.excludeKeyword,
     includesRetweets: form.includesRetweets
   })
   window.open(url)
@@ -145,6 +146,13 @@ const handleEnter = (event: KeyboardEvent | Event) => {
     <el-form-item label="キーワード">
       <el-input
         v-model="form.keyword"
+        clearable
+        @keydown.enter="handleEnter"
+      />
+    </el-form-item>
+    <el-form-item label="除外キーワード">
+      <el-input
+        v-model="form.excludeKeyword"
         clearable
         @keydown.enter="handleEnter"
       />
