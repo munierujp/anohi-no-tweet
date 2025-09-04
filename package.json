@@ -15,7 +15,7 @@
     "test": "nuxt test"
   },
   "engines": {
-    "node": "20.19.4"
+    "node": "22.19.0"
   },
   "devDependencies": {
     "@element-plus/nuxt": "1.0.7",
@@ -27,7 +27,7 @@
     "@nuxtjs/eslint-module": "4.1.0",
     "@pinia-plugin-persistedstate/nuxt": "1.1.2",
     "@pinia/nuxt": "0.4.11",
-    "@types/node": "20.19.9",
+    "@types/node": "22.18.1",
     "@vite-pwa/nuxt": "0.10.8",
     "date-fns": "4.1.0",
     "eslint": "8.57.1",
