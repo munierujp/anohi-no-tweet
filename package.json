@@ -18,7 +18,7 @@
     "node": "20.19.4"
   },
   "devDependencies": {
-    "@element-plus/nuxt": "1.0.7",
+    "@element-plus/nuxt": "1.0.10",
     "@markuplint/vue-parser": "4.6.19",
     "@markuplint/vue-spec": "4.5.19",
     "@mdi/font": "7.4.47",
